@@ -1,0 +1,175 @@
+<!-- Breadcrumb section -->
+<section class="position-relative p-0">
+
+    <div class="profile_sec_prt_1tb">
+        <div class="profile_sec_prt_1tb_main_sec">
+            <ul class="d-inline-block w-100 pr-0 pl-3 py-5">
+                <li>
+                    <a href="javascript:void(0)" class="font-16 font-400 d-flex p-3 text-light"
+                        (click)="activeTab = 'profile'" [ngClass]="activeTab == 'profile' ? 'active' : ''">
+                        <span class="material-icons mr-2">account_circle</span>
+                        My Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="font-16 font-400 d-flex p-3 text-light"
+                    (click)="activeTab = 'wishlist'" [ngClass]="activeTab == 'wishlist' ? 'active' : ''">
+                        <span class="material-icons mr-2">favorite</span>
+                        My Wishlist
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="font-16 font-400 d-flex p-3 text-light"
+                    (click)="activeTab = 'order'" [ngClass]="activeTab == 'order' ? 'active' : ''">
+                        <span class="material-icons mr-2">card_giftcard</span>
+                        My Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="font-16 font-400 d-flex p-3 text-light"
+                        (click)="activeTab = 'password'" [ngClass]="activeTab == 'password' ? 'active' : ''">
+                        <span class="material-icons mr-2">password</span>
+                        Change Password
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="profile_sec_partiton_002_al_wt_brdcrmb" *ngIf="activeTab == 'profile'">
+
+        <div class="jumbotron jumbotron-fluid breadcrumb_jumbo_custom">
+            <div class="container text-center">
+                <h1 class="text-dark font-500 mb-0">
+                    My Profile
+                </h1>
+                <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+                    <ol class="breadcrumb mb-0 bg-transparent">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:void(0)" [routerLink]="['/home']" class="text-gray font-400 text-font-18">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+                            My Profile
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Breadcrumb End -->
+
+        <!-- Profile section -->
+
+        <div class="profile_sec py-5 w-75 mx-auto">
+            <div class="profile_sec_partiton d-inline-block w-100 h-100">
+                <div class="profile_sec_prt_2tb">
+                    <div class="row mx-0 px-5">
+                        <div class="col-lg-12 col-md-10 col-sm-12 mx-auto">
+                            <form class="custom_form" [formGroup]="userForm" (submit)="updateUser()">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12 px-3 mb-4">
+                                        <div class="avatar-upload">
+                                            <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
+                                            <div class="avatar-edit">
+                                                <input #file type="file" id="imageUpload" name="profilePic"
+                                                    accept=".png, .jpg, .jpeg" 
+                                                    (change)="systemFilesPicked(file.files)">
+                                                <label for="imageUpload">
+                                                    <span class="material-icons text-light">edit</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="avatar-delete" *ngIf="!removeProfilebtn">
+                                                <label>
+                                                    <span (click)="removeProfile()" class="material-icons text-light">close</span>
+                                                    
+                                                </label>
+                                            </div>
+
+                                            <div class="avatar-preview">
+                                                <div id="imagePreview" [ngStyle]="{
+                                                    'background-image': (imgUrl) ? 'url(' + imgUrl + ')' : ''         
+                                                }">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6 px-3 mb-4">
+                                        <input type="text" class="form-control" placeholder="First Name"
+                                            formControlName="first_name" name="first_name"
+                                            (keyup)="validateFormField('name')">
+                                    </div>
+                                    <div class="form-group col-md-6 px-3 mb-4">
+                                        <input type="text" class="form-control" placeholder="Last Name"
+                                            formControlName="last_name" name="last_name"
+                                            (keyup)="validateFormField('last_name')">
+                                    </div>
+                                    <div class="form-group col-md-6 px-3 mb-4">
+                                        <input type="email" class="form-control" placeholder="Email"
+                                            formControlName="email" name="email" (keyup)="validateFormField('email')">
+                                    </div>
+                                    <div class="form-group col-md-6 px-3 mb-4">
+                                        <input type="text" class="form-control" placeholder="Mobile Number"
+                                            formControlName="mobile" name="mobile"
+                                            (keyup)="validateFormField('mobile')">
+                                    </div>
+                                    <div class="form-group col-md-12 px-3 mb-4">
+                                        <textarea placeholder="Address" class="form-control" formControlName="address"
+                                            (blur)="validateFormField('address')"></textarea>
+                                    </div>
+                                    <!-- <div class="form-group col-md-4 px-3 mb-4">
+                                        <select class="form-control">
+                                            <option value="0">City</option>
+                                            <option value="1">City1</option>
+                                            <option value="2">City2</option>
+                                            <option value="3">City3</option>
+                                            <option value="4">City4</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4 px-3 mb-4">
+                                        <select class="form-control">
+                                            <option value="0">State</option>
+                                            <option value="1">State1</option>
+                                            <option value="2">State2</option>
+                                            <option value="3">State3</option>
+                                            <option value="4">State4</option>
+                                        </select>
+                                    </div> -->
+                                    <div class="form-group col-md-4 px-3 mb-4">
+                                        <input type="text" class="form-control" placeholder="City" 
+                                            formControlName="city" name="city" (keyup)="validateFormField('city')" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4 px-3 mb-4">
+                                        <input type="text" class="form-control" placeholder="State"
+                                            formControlName="state" name="state" (keyup)="validateFormField('state')" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4 px-3 mb-4">
+                                        <input type="text" class="form-control" placeholder="Pin Code"
+                                            formControlName="pincode" name="pincode"
+                                            (change)="pincodeAutofill()">
+                                    </div>
+                                    <!-- <div class="form-group col-md-12 px-3 mb-5 mt-3">
+                                        <a href="javascript:void(0)" class="font-18 font-500"
+                                            style="text-decoration:underline;"
+                                            [routerLink]="['password',{id : userData.id}]">Change Password</a>
+                                    </div> -->
+                                    <div class="form-group col-md-12 text-center px-3 mb-4">
+                                        <button type="button" (click)="updateUser()" class="btn btn-theme font-18 py-3 px-5 mt-2"
+                                            [disabled]="!userForm.valid">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <yaari-change-password *ngIf="activeTab == 'password'"></yaari-change-password>
+    <yaari-my-orders *ngIf="activeTab == 'order'"></yaari-my-orders>
+    <yaari-my-wishlist *ngIf="activeTab =='wishlist'"></yaari-my-wishlist>
+</section>
+
+<!-- Profile section End -->

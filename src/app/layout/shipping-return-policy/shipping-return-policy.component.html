@@ -1,0 +1,99 @@
+
+<!-- Breadcrumb section -->
+
+<div class="jumbotron jumbotron-fluid breadcrumb_jumbo_custom">
+    <div class="container text-center">
+      <h1 class="text-dark font-500 mb-0">
+        Shipping Return Policy
+      </h1>
+      <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+        <ol class="breadcrumb mb-0 bg-transparent">
+          <li class="breadcrumb-item">
+            <a href="#" class="text-gray font-400 text-font-18">Home</a>
+          </li>
+          <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+            Shipping Return Policy
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Breadcrumb End -->
+
+  
+<!-- Shipping Return Refund section -->
+
+<section class="faq_sec">
+    <div class="container-fluid">
+      <div class="row mx-0 px-5">
+        <div class="col-lg-12 mb-5">
+          <h3 class="text-dark text-left font-500 mb-4">
+            Shipping
+          </h3>
+
+          <div class="accordion" id="accordionExample" > 
+            <ng-container *ngFor="let item of shippingpolicies;let idx = index">
+                <div class="card">
+                    <div class="card-head" [id]="'heading'+idx">
+                        <h2 class="mb-0" data-toggle="collapse" [attr.data-target]="'#collapse'+idx"
+                            aria-expanded="true" [attr.aria-controls]="'collapse'+idx">
+                            <span class="material-icons">expand_more</span>
+                            {{item.shippingpolicy_name}}
+                        </h2>
+                    </div>
+
+                    <div [id]="'collapse'+idx" class="collapse " [attr.aria-labelledby]="'heading'+idx"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            {{item.shippingpolicy}}
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        </div>
+            </div>
+           
+            <div class="row mx-0 px-5">
+              <div class="col-lg-12 mb-5">
+
+            <h3 class="text-dark text-left font-500 mb-4">
+              Returns, Refunds, Cancellations and Exchanges
+            </h3>
+  
+            <div class="accordion" id="accordionExample1">
+              <ng-container *ngFor="let item of returnpolicies;let idx = index">
+                  <div class="card">
+                      <div class="card-head" [id]="'heading'+idx">
+                          <h2 class="mb-0" data-toggle="collapse" [attr.data-target]="'#collapse'+idx"
+                              aria-expanded="true" [attr.aria-controls]="'collapse'+idx">
+                              <span class="material-icons">expand_more</span>
+                              {{item.returnpolicy_name}}
+                          </h2>
+                      </div>
+  
+                      <div [id]="'collapse'+idx" class="collapse " [attr.aria-labelledby]="'heading'+idx"
+                          data-parent="#accordionExample">
+                          <div class="card-body">
+                              {{item.returnpolicy}}
+                          </div>
+                      </div>
+                  </div>
+              </ng-container>
+  
+              </div>
+              </div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 text-center my-5 pt-5">
+              <a href="javascript:void(0)" class="font-500 btn-theme-border px-5 py-3">
+                View More
+              </a>
+            </div>
+            
+             </section>
+
+

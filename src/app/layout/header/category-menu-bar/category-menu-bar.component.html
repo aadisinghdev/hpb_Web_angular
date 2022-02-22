@@ -1,0 +1,437 @@
+<div class="menu-container custom_navbar_main">
+    <div class="container-fluid">
+      <div class="menu">
+        <ul class="clearfix px-3">
+          <li>
+            <a href="javascript:void(0)" class="nav-link--megamenu active"
+            [routerLink]="['/home']">Home</a>
+          </li>
+          <ng-container *ngFor="let collection of headerCollections">
+          <li (mouseup)="showCategoryDropdown(collection.id)" (mouseleave)="hideDropDown(collection.id)">
+            <a href="javascript:void(0)" class="nav-link--megamenu">
+              {{collection.name}}
+              <span class="material-icons nav_links_btm_arrow">expand_more</span>
+            </a>
+            <ul class="nav-link--megamenu-sub-lg" [id]="'cat-'+collection.id">
+              <div class="row mx-0">
+                <!-- <div class="col-lg-7 px-2"> -->
+                  <!-- <div class="row mx-0"> -->
+                    <ng-container *ngFor="let key of Object.keys(categories)">
+                      <div class="col-lg-3 px-2 mb-3" *ngIf="categories[key]['collection_id'] == collection.id">
+                        <li>
+                          <a href="javascript:void(0)" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                            {{key}}
+                          </a>
+                          <ul>
+                            <ng-container *ngFor="let ele of categories[key]">
+                              <li *ngIf="ele.category.collectionId == collection.id">
+                                <a href="javascript:void(0)" class="nav-link--megamenu"
+                                (click)="onChange(ele,key);hideDropDown(collection.id)">{{ele.name}}
+                              </a>
+                                <!-- [routerLink]="['/app/products',{'sub_id':ele.id,'sub_name':ele.name , 'cat':key}]" -->
+                              </li>
+                              </ng-container>
+                          </ul>
+                        </li>
+                      </div>
+                    </ng-container>
+                    <!-- <div class="col-lg-4 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          SEASONAL WEAR
+
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Long Gown</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Cotton Skirts</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Woolen Tops</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Woolen Maxi</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                    <div class="col-lg-4 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          NEW ARRIVAL
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Perfect Fit Top</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Leggings</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Shorts</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Pyjama</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                    <div class="col-lg-4 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          BOTIQUE
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Jeans</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Tops</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Gown</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Maxi</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                    <div class="col-lg-4 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          ETHNIC WEAR
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Long Gown</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Cotton Skirts</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Woolen Tops</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Woolen Maxi</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                    <div class="col-lg-4 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          PARTY COLLECTION
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Perfect Fit Top</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Leggings</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Shorts</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Pyjama</a></li>
+                        </ul>
+                      </li>
+                    </div> -->
+                  <!-- </div> -->
+                <!-- </div> -->
+                 <!-- <div class="col-lg-6 px-2">
+                <div class="nav_offer_banner05">
+                  <img src="../../../../assets/images/nav_col_img3.png">
+                </div>
+              </div> -->
+              <!-- <div class="col-lg-6 px-2">
+                <div class="nav_offer_banner05">
+                  <img src="images/nav_col_img3.png">
+                </div>
+              </div> -->
+              </div>
+            </ul>
+          </li>
+        </ng-container>
+          <!-- <li (mouseover)="showCategoryDropdown('men')" (mouseout)="hideDropDown('men')">
+            <a href="#" class="nav-link--megamenu">
+              Men's Collection
+              <span class="material-icons nav_links_btm_arrow">expand_more</span>
+            </a>
+            <ul class="nav-link--megamenu-sub-lg" id="men_cat">
+              <div class="row mx-0">
+                <div class="col-lg-6 px-2">
+                  <div class="row mx-0">
+                    <div class="col-lg-6 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          SHIRTS
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Jeans</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Tops</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Gown</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Maxi</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                    <div class="col-lg-6 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          T-SHIRTS  
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Long Gown</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Cotton Skirts</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Woolen Tops</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Woolen Maxi</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                    <div class="col-lg-6 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          TROUSERS
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Perfect Fit Top</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Leggings</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Shorts</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Pyjama</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                    <div class="col-lg-6 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          SUIT & BLAZERS  
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Jeans</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Tops</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Gown</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Maxi</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 px-2">
+                  <div class="row">
+                    <div class="col-lg-6 px-2">
+                      <div class="nav_offer_banner01">
+                        <img src="../../../../assets/images/nav_col_img1.png">
+                      </div>
+                      <div class="nav_offer_banner01">
+                        <img src="../../../../assets/images/nav_col_img2.png">
+                      </div>
+                    </div>
+                    <div class="col-lg-6 px-2">
+                      <div class="nav_offer_banner02">
+                        <img src="../../../../assets/images/nav_col_img3.png">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="nav-link--megamenu">
+              Bags
+              <span class="material-icons nav_links_btm_arrow">expand_more</span>
+            </a>
+            <ul class="nav-link--megamenu-sub-lg">
+              <div class="row mx-0">
+                <div class="col-lg-3 px-2 mb-3">
+                  <li>
+                    <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                      HAND BAGS
+                    </a>
+                    <ul>
+                      <li><a href="#" class="nav-link--megamenu">Jeans</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Tops</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Gown</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Maxi</a></li>
+                    </ul>
+                  </li>
+                </div>
+                <div class="col-lg-3 px-2 mb-3">
+                  <li>
+                    <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                      TRAVEL BAGS  
+                    </a>
+                    <ul>
+                      <li><a href="#" class="nav-link--megamenu">Long Gown</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Cotton Skirts</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Woolen Tops</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Woolen Maxi</a></li>
+                    </ul>
+                  </li>
+                </div>
+                <div class="col-lg-3 px-2 mb-3">
+                  <li>
+                    <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                      BACKPACKS
+                    </a>
+                    <ul>
+                      <li><a href="#" class="nav-link--megamenu">Perfect Fit Top</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Leggings</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Shorts</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Pyjama</a></li>
+                    </ul>
+                  </li>
+                </div>
+                <div class="col-lg-3 px-2">
+                  <div class="nav_offer_banner03">
+                    <img src="../../../../assets/images/nav_col_img3.png">
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="nav-link--megamenu">
+              Shoes            
+              <span class="material-icons nav_links_btm_arrow">expand_more</span>
+            </a>          
+            <ul class="nav-link--megamenu-sub-lg">
+              <div class="row mx-0">
+                <div class="col-lg-7 px-2">
+                  <div class="row mx-0">
+                    <div class="col-lg-4 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          WOMEN'S COLLECTION
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Jeans</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Tops</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Gown</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Maxi</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                    <div class="col-lg-4 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          MEN'S COLLECTION
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Long Gown</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Cotton Skirts</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Woolen Tops</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Woolen Maxi</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                    <div class="col-lg-4 px-2 mb-3">
+                      <li>
+                        <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                          SPORT'S COLLECTION
+                        </a>
+                        <ul>
+                          <li><a href="#" class="nav-link--megamenu">Perfect Fit Top</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Leggings</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Shorts</a></li>
+                          <li><a href="#" class="nav-link--megamenu">Pyjama</a></li>
+                        </ul>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5 px-2">
+                  <div class="row">
+                    <div class="col-lg-6 px-2">
+                      <div class="nav_offer_banner04">
+                        <img src="../../../../assets/images/nav_col_img3.png">
+                      </div>
+                      <h6 class="font-600 text-dark text-center">
+                        American Crepe Floral Gown
+                        <span class="d-block mt-3 font-400">
+                          ₹500
+                        </span>
+                      </h6>
+                    </div>
+                    <div class="col-lg-6 px-2">
+                      <div class="nav_offer_banner02">
+                        <img src="../../../../assets/images/nav_col_img3.png">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="nav-link--megamenu">
+              Accessories
+              <span class="material-icons nav_links_btm_arrow">expand_more</span>
+            </a>
+            <ul class="nav-link--megamenu-sub-lg">
+              <div class="row mx-0">
+                <div class="col-lg-3 px-2 mb-3">
+                  <li>
+                    <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                      SUNGLASSES
+                    </a>
+                    <ul>
+                      <li><a href="#" class="nav-link--megamenu">Jeans</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Tops</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Gown</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Maxi</a></li>
+                    </ul>
+                  </li>
+                </div>
+                <div class="col-lg-3 px-2 mb-3">
+                  <li>
+                    <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                      JEWELLERY
+                    </a>
+                    <ul>
+                      <li><a href="#" class="nav-link--megamenu">Long Gown</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Cotton Skirts</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Woolen Tops</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Woolen Maxi</a></li>
+                    </ul>
+                  </li>
+                </div>
+                <div class="col-lg-3 px-2 mb-3">
+                  <li>
+                    <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                      HAIR ACCESSORIES
+                    </a>
+                    <ul>
+                      <li><a href="#" class="nav-link--megamenu">Perfect Fit Top</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Leggings</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Shorts</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Pyjama</a></li>
+                    </ul>
+                  </li>
+                </div>              
+                <div class="col-lg-3 px-2 mb-3">
+                  <li>
+                    <a href="#" class="nav-link--megamenu font-600 font-18 text-uppercase btn-theme-border">
+                      HATS & SCARVES
+                    </a>
+                    <ul>
+                      <li><a href="#" class="nav-link--megamenu">Perfect Fit Top</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Leggings</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Shorts</a></li>
+                      <li><a href="#" class="nav-link--megamenu">Pyjama</a></li>
+                    </ul>
+                  </li>
+                </div>
+                <div class="col-lg-6 px-2">
+                  <div class="nav_offer_banner05">
+                    <img src="../../../../assets/images/nav_col_img3.png">
+                  </div>
+                </div>
+                <div class="col-lg-6 px-2">
+                  <div class="nav_offer_banner05">
+                    <img src="../../../../assets/images/nav_col_img3.png">
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li> -->
+          <!-- <li (mouseover)="showPagesDropdown('others')" (mouseout)="hidePagesDropDown('others')">
+            <a href="javascript:void(0)" class="nav-link--megamenu">
+              Others
+              <span class="material-icons nav_links_btm_arrow">expand_more</span>
+            </a>
+            <ul class="nav-link--megamenu-sub-lg normal-sub" id="collec_ul">
+              <ng-container *ngFor="let item of otherCollections">
+                <li><a href="javacript:void(0)" [routerLink]="['/app/products']" class="nav-link--megamenu">{{item.name}}</a></li>
+              </ng-container>
+            </ul>
+            </li> -->
+          <!-- <li>
+            <a href="javascript:void(0)" class="nav-link--megamenu"
+            [routerLink]="['/app/all-collections']">
+              All Collections
+            </a>
+          </li> -->
+          <!-- <li (mouseup)="showPagesDropdown()" (mouseleave)="hidePagesDropDown()">
+            <a href="javascript:void(0)" class="nav-link--megamenu">
+              Pages
+              <span class="material-icons nav_links_btm_arrow">expand_more</span>
+            </a>
+            <ul class="nav-link--megamenu-sub-lg normal-sub" id="pages_ul">
+              <li><a href="javacript:void(0)" [routerLink]="['/app/about']" class="nav-link--megamenu">About</a></li>
+              <li><a href="javacript:void(0)" [routerLink]="['/app/contact']" class="nav-link--megamenu">Contact</a></li>
+              <li><a href="javacript:void(0)" [routerLink]="['/app/faq']" class="nav-link--megamenu">FAQ</a></li>
+            </ul>
+          </li> -->
+          <!-- <li class="web_prod_srch_li">
+            <input type="text" placeholder="Find the best for you...">
+            <img class="img-fluid" width="17" height="17" src="../../../../assets/images/search_icon.svg">
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>

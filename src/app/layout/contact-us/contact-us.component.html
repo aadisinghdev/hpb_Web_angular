@@ -1,0 +1,121 @@
+<!-- Breadcrumb section -->
+
+<div class="jumbotron jumbotron-fluid breadcrumb_jumbo_custom">
+    <div class="container text-center">
+        <h1 class="text-dark font-500 mb-0">
+            Contact Us
+        </h1>
+        <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+            <ol class="breadcrumb mb-0 bg-transparent">
+                <li class="breadcrumb-item">
+                    <a href="#" class="text-gray font-400 text-font-18">Home</a>
+                </li>
+                <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+                    Contact Us
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Breadcrumb End -->
+
+<!-- Map section -->
+
+<section class="sing_in_sec pb-4">
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University of Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Map section End -->
+
+<!-- Contact Details -->
+
+<section class="contact_det_sec pt-0">
+    <div class="container-fluid">
+        <div class="row mx-0 px-5 justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="contact_det_sec_crds w-100 text-center px-3 py-5">
+                    <img class="img-fluid my-3" src="../../../assets/images/phone_icon.svg">
+                    <h4 class="font-500 text-dark my-2">
+                        PHONE
+                    </h4>
+                    <span class="font-16 text-gray font-400 my-3 d-block">
+                        For customers Support: 9152220220<br>
+                        For Supplier Support: 9152330330
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="contact_det_sec_crds w-100 text-center px-3 py-5">
+                    <img class="img-fluid my-3" src="../../../assets/images/mail_icon.svg">
+                    <h4 class="font-500 text-dark my-2">
+                        EMAIL
+                    </h4>
+                    <span class="font-16 text-gray font-400 my-3 d-block">
+                        Help.HPB@ydiconsumer.com<br>
+                        Sell.HPB@ydiconsumer.com<br>
+                        Enquiry.HPB@ydiconsumer.com
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="contact_det_sec_crds w-100 text-center px-3 py-5">
+                    <img class="img-fluid my-3" src="../../../assets/images/address_icon.svg">
+                    <h4 class="font-500 text-dark my-2">
+                        ADDRESS
+                    </h4>
+                    <span class="font-16 text-gray font-400 my-3 d-block">
+                        One International Center, 4th Floor, Tower 1, Senapati
+                        Bapat Marg, Dadar West, Prabhadevi,
+                        Mumbai Maharashtra - 400013
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Details End -->
+
+<!-- Contact Us section -->
+
+<section class="sing_in_sec">
+    <div class="container-fluid">
+        <div class="row mx-0 px-5 mb-5">
+            <div class="col-lg-12 mx-auto text-center">
+                <h2 class="sec_title d-inline-block position-relative">
+                    Contact Form
+                </h2>
+            </div>
+        </div>
+        <div class="row mx-0 px-5">
+            <div class="col-lg-6 col-md-10 col-sm-12 mx-auto">
+                <form class="custom_form" [formGroup]="ContactForm" (ngSubmit)="postFormData(ContactForm.value)">
+                    <div class="form-row">
+                        <div class="form-group col-md-12 mb-4">
+                            <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName">
+                        </div>
+                        <div class="form-group col-md-12 mb-4">
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" formControlName="email">
+                        </div>
+                        <div class="form-group col-md-12 mb-4">
+                            <input type="text" class="form-control" placeholder="Subject" formControlName="subject">
+                        </div>
+                        <div class="form-group col-md-12 mb-4">
+                            <textarea placeholder="Message" class="form-control" formControlName="message"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-theme font-18 w-100 py-4 mt-2">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Us section End -->

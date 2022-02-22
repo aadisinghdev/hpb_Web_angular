@@ -1,0 +1,1489 @@
+<!-- Breadcrumb section -->
+<div class="profile_sec_partiton_002_al_wt_brdcrmb">
+
+  <div class="jumbotron jumbotron-fluid breadcrumb_jumbo_custom">
+    <div class="container text-center">
+      <h1 class="text-dark font-500 mb-0">
+        My Orders
+      </h1>
+      <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+        <ol class="breadcrumb mb-0 bg-transparent">
+          <li class="breadcrumb-item">
+            <a href="#" class="text-gray font-400 text-font-18">Account</a>
+          </li>
+          <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+            My Orders
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Breadcrumb End -->
+
+  <!-- Profile section -->
+
+  <div class="profile_sec pb-5 pt-0 w-100 mx-auto">
+    <div class="profile_sec_partiton d-inline-block w-100 h-100">
+      <div class="profile_sec_prt_2tb">
+        <div class="row mx-0 px-0">
+
+          <!-- Order Status Detail Tabs -->
+          <div class="col-lg-12">
+
+            <ul class="nav nav-pills custom_tabs_on_ordr_stus_pg border-bottom pb-3 mb-4" id="pills-tab" role="tablist">
+              <li class="nav-item px-2">
+                <a class="nav-link active" id="pills-all-order-tab" data-toggle="pill" href="#pills-all-order" role="tab" aria-controls="pills-prdct-des" aria-selected="true">All Orders</a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" id="pills-ordered-tab" data-toggle="pill" href="#pills-ordered" role="tab" aria-controls="pills-review" aria-selected="false">Ordered</a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" id="pills-delivered-tab" data-toggle="pill" href="#pills-delivered" role="tab" aria-controls="pills-ship-det" aria-selected="false">Delivered</a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" id="pills-exchange-tab" data-toggle="pill" href="#pills-exchange" role="tab" aria-controls="pills-ship-det" aria-selected="false">Exchanged</a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" id="pills-return-tab" data-toggle="pill" href="#pills-return" role="tab" aria-controls="pills-ship-det" aria-selected="false">Returned</a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" id="pills-cancelled-tab" data-toggle="pill" href="#pills-cancelled" role="tab" aria-controls="pills-ship-det" aria-selected="false">Cancelled</a>
+              </li>
+            </ul>
+            
+            <!-- <ul class="nav nav-pills custom_tabs_on_ordr_stus_pg border-bottom pb-3 mb-4" id="pills-tab" role="tablist"> -->
+              <!-- <li class="nav-item px-2">
+                <a class="nav-link active" id="pills-all-order-tab" data-toggle="pill" href="javascript:void(0)"
+                  role="tab" aria-controls="pills-prdct-des" aria-selected="true">All Orders</a>
+              </li> -->
+              <!-- <li class="nav-item px-2">
+                <a class="nav-link" id="pills-ordered-tab" data-toggle="pill" href="#pills-ordered" role="tab"
+                  aria-controls="pills-review" aria-selected="false">Ordered</a>
+              </li> 
+              <li class="nav-item px-2">
+                <a class="nav-link" id="pills-delivered-tab" data-toggle="pill" href="#pills-delivered" role="tab"
+                  aria-controls="pills-ship-det" aria-selected="false">Delivered</a>
+              </li> 
+              <li class="nav-item px-2">
+                <a class="nav-link" id="pills-exchange-tab" data-toggle="pill" href="#pills-exchange" role="tab"
+                  aria-controls="pills-ship-det" aria-selected="false">Exchanged</a>
+              </li> 
+              <li class="nav-item px-2">
+                <a class="nav-link" id="pills-return-tab" data-toggle="pill" href="#pills-return" role="tab"
+                  aria-controls="pills-ship-det" aria-selected="false">Returned</a>
+              </li> 
+              <li class="nav-item px-2">
+                <a class="nav-link" id="pills-cancelled-tab" data-toggle="pill" href="#pills-cancelled" role="tab"
+                  aria-controls="pills-ship-det" aria-selected="false">Cancelled</a>
+              </li>  -->
+            <!-- </ul> -->
+
+            <div class="tab-content my_order_tb_profile_content" id="pills-tabContent">
+
+              <!-- All Order tab -->
+              <div class="tab-pane fade show active" id="pills-all-order" role="tabpanel"
+                aria-labelledby="pills-all-order-tab">
+                <h5 class="text-dark font-500 mb-4 w-100">
+                  All Order
+                </h5>
+                <!-- <ng-container *ngFor="let key of Object.keys(myOrders)"> -->
+
+
+                <!-- my orders with pagination  -->
+
+                <ng-container *ngIf="myOrders.length > 0">
+                  <ng-container *ngFor="let order of myOrders | slice:0:myOrders.length let i=index"> 
+                    <ng-container *ngIf="order.payLater != false || order.paymentStatus != 'none'">
+                     <ng-container *ngFor="let item of order.cartDetails ">
+                      <div class="my_order_crd_main">
+                        <div class="best_sellers_prdct_on_det_pg_list">
+                          <div class="d-flex float-left pl-0">
+                            <div class="best_sellers_prdct_on_det_pg_list_img">
+                              <img class="img-fluid" [src]="item.product.thumbImages">
+                            </div>
+                          </div>
+                          <div class="d-flex w-50 float-left pl-3">
+                            <div class="prdct_sec_list_crd_mn_content p-0 w-100 d-inline-block">
+                              <h5 class="prdct_list_title mb-3 w-75 font-500 text-dark">
+                                {{item.product.name}}
+                              </h5>
+                              <p class="prdct_list_sub_title text-gray mb-2 w-75">
+                                {{item.product.description}}
+                              </p>
+                              <div class="prdct_list_price_det w-100 mb-4">
+                                <span class="badge_on_order float-left px-2 py-1 mr-2">
+                                  Order Number
+                                </span>
+                                <!-- <a href="javascript:void(0)"
+                                  class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                  View Order Details
+                                  <span class="material-icons ml-0">chevron_right</span>
+                                </a> -->
+                                <p class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                  {{order.orderNumber}}
+                                </p>
+                              </div>
+                              <div class="w-100 mb-3 d-inline-block">
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Size:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{item.product.size}}
+                                  
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Qty:
+                                </span>
+                                <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                  {{item.quantity}}
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Discount:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{roundOffDiscount(item.product.internalDiscount)}}%        
+                                </span>
+                              </div>
+                            </div>
+                            
+                            <!-- <div class="w-100 mb-3 d-inline-block">
+                              <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                Size:
+                              </span>
+                              <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                {{item.product.size}}
+                                
+                              </span>
+                              <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                Qty:
+                              </span>
+                              <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                {{item.quantity}}
+                              </span>
+                              <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                Discount:
+                              </span>
+                              <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                {{item.product.internalDiscount}}
+                                
+                              </span>
+                            </div> -->
+                          </div>
+                          <div class="d-inline-block text-right w-25 float-right pl-3 justify-content-end">
+                            <span class="font-600 font-20 text-dark price_fnl mr-1 d-block mb-5">
+                              ₹{{item.product.sellingPrice}}
+                            </span>
+                          </div>
+  
+                          <!-- <div class="d-inline-block w-100 pt-4 order_track_sec_my_order">
+                            <div class="row">
+                              <div class="hh-grayBox">
+                                <div class="row justify-content-between">
+                                  <ng-container *ngFor="let status of order.activities">
+                                    <div class="order-tracking completed">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">{{status['activity']}}</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">{{status['date'] | date : 'long'}}</span>
+                                      </p>
+                                    </div>
+                                  </ng-container>
+                                  
+                                  <div class="order-tracking">
+                                    <span class="is-complete"></span>
+                                    <p>
+                                      <span class="font-500 text-dark mb-2">Order Out for Delivery</span>
+                                      <br>
+                                      <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span>
+                                    </p>
+                                  </div>
+                                  <div class="order-tracking">
+                                    <span class="is-complete"></span>
+                                    <p>
+                                      <span class="font-500 text-dark mb-2">Order Delivered</span>
+                                      <br>
+                                      <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span> 
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                          
+                        </div>
+                      
+                      </div>
+                      <div class="prdct_list_price_det w-100 mb-4" *ngIf="order.status !='cancelled'"
+                            style="max-width: 200px;">
+                            <a href="javascript:void(0)"
+                              class="btn-theme-border w-100 text-center px-0 font-500 d-inline-block py-3"
+                              (click)="cancelProductOrder(order)">
+                              Cancel Order
+                            </a>
+                      </div>
+  
+                    
+  
+                      <!-- Cancel order modal  -->
+                    <div>
+                      <ng-template #modal>
+                        <div class="modal-header">
+                          <h4 class="modal-title">Order Cancellation</h4>
+                          <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+  
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                            <div class="row mx-0 px-3">
+                              <div class="col-lg-12">
+                                <div class="row mx-0">
+                                  <div class="col-lg-12 px-0">
+                                    <div class="col-lg-12 mt-3 container-fluid">
+                                      <form [formGroup]="cancelOrderForm" (change)="selectReason()">
+                                        <div class="col-lg-12-px-0"> 
+                                        <div class="form-group  text-light font-400 w-100 d-inline-block p-0 ">
+                                          <select formControlName="reason">
+                                            <option [defaultSelected]=true>Choose reason</option>
+                                            <option>Expected delievery time is long</option>
+                                            <option>Price for the product has decreased</option>
+                                            <option>Need different size or color</option>
+                                            <option>I want to cancel due to product quality issue</option>
+                                            <option>I will not be available at home on delievery day</option>
+                                            <option>I want to change my phone number</option>
+                                            <option>I have purchased the product elsewhere</option>
+                                            <option>I want to change address for order</option>
+                                            <option>I have changed my mind</option>
+                                            <option>Other</option>
+                                          </select>
+                                        </div>
+                                         </div>
+                                         <div class="form-group" *ngIf="show==true">
+                                          <p> write the reason to cancel: </p>
+                                          <textarea id="w3review" name="w3review" rows="4" cols="25"
+                                            formControlName="text">
+                                          </textarea>
+                                        </div>
+  
+                                         <!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-light"
+                                            (click)="closeModal()">Close</button>
+                                          <button type="button" class="btn btn-light" (click)="save(order)">Save</button>
+                                        </div>
+                                      </form>  
+                                     </div>
+  
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                   </ng-template>
+                  </div> 
+  
+                  <!-- Order tracking section -->
+                   
+  
+                    </ng-container>
+                  </ng-container>  
+                </ng-container>
+                </ng-container> 
+                <ng-container *ngIf="myOrders && myOrders.length <= 0">
+                  <h1 class="prdct_list_sub_title text-gray mb-3">
+                    No Order present.
+                  </h1>
+                </ng-container>
+                 
+                <!-- <button class="btn btn-outline-dark" *ngIf="orderCount < myOrders.length" (click)="viewMore()">View More</button> -->
+                <!-- <button class="btn btn-outline-dark" *ngIf="orderCount == myOrders.length && orderCount>=1" (click)="viewLess()">View Less</button> -->
+                 
+                
+                <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls>  -->
+
+                <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="openScrollableContent(longContent)">Modal scrollable content</button> -->
+
+
+
+                <!--  my orders tab with load more functionality -->
+                
+                
+                   <!-- <ng-container *ngFor="let item of allProducts | slice:0:productCount  let i=index">
+                  
+                    <div class="my_order_crd_main">
+                      <div class="best_sellers_prdct_on_det_pg_list">
+                        <div class="d-flex float-left pl-0">
+                          <div class="best_sellers_prdct_on_det_pg_list_img">
+                            <img class="img-fluid" [src]="item.product.thumbImages">
+                          </div>
+                        </div>
+                        <div class="d-flex w-50 float-left pl-3">
+                          <div class="prdct_sec_list_crd_mn_content p-0 w-100 d-inline-block">
+                            <h5 class="prdct_list_title mb-3 w-75 font-500 text-dark">
+                              {{item.product.name}}
+                            </h5>
+                            <p class="prdct_list_sub_title text-gray mb-2 w-75">
+                              {{item.product.description}}
+                            </p>
+                            <div class="prdct_list_price_det w-100 mb-4">
+                              <span class="badge_on_order float-left px-2 py-1 mr-2">
+                                Order Number
+                              </span>
+                              <a href="javascript:void(0)"
+                                class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                View Order Details
+                                <span class="material-icons ml-0">chevron_right</span>
+                              </a>
+                            </div>
+                            <div class="w-100 mb-3 d-inline-block">
+                              <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                Size:
+                              </span>
+                              <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                {{item.product.size}}
+                                
+                              </span>
+                              <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                Qty:
+                              </span>
+                              <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                {{item.quantity}}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-inline-block text-right w-25 float-right pl-3 justify-content-end">
+                          <span class="font-600 font-20 text-dark price_fnl mr-1 d-block mb-5">
+                            ₹{{item.product.sellingPrice}}
+                          </span>
+                        </div>
+                      
+                      
+              
+                        <div class="d-inline-block w-100 pt-4 order_track_sec_my_order">
+                          <div class="row">
+                            <div class="hh-grayBox">
+                              <div class="row justify-content-between">
+                                  
+                                  <ng-container *ngFor="let activity of activities">
+                                    <div class="order-tracking completed">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">{{activity['activity']}}</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">{{status['date'] | date : 'long'}}</span> -->
+                                      <!-- </p>
+                                    </div>
+                                  </ng-container>
+                                  
+                                  <div class="order-tracking">
+                                    <span class="is-complete"></span>
+                                    <p>
+                                      <span class="font-500 text-dark mb-2">Order Out for Delivery</span>
+                                      <br>
+                                      <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span>
+                                    </p>
+                                  </div>
+                                  <div class="order-tracking">
+                                    <span class="is-complete"></span>
+                                    <p>
+                                      <span class="font-500 text-dark mb-2">Order Delivered</span>
+                                      <br>
+                                      <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span> 
+                                    </p>
+                                  </div>
+                                
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    
+                    </div>
+                    <div class="prdct_list_price_det w-100 mb-4" *ngIf="order.status !='cancelled'"
+                          style="max-width: 200px;">
+                          <a href="javascript:void(0)"
+                            class="btn-theme-border w-100 text-center px-0 font-500 d-inline-block py-3"
+                            (click)="cancelProductOrder(order)">
+                            Cancel Order
+                          </a>
+                        </div> 
+
+                  
+
+                   Cancel order modal -->
+                   <!-- <div> 
+                    <ng-template #modal>
+                      <div class="modal-header">
+                        <h4 class="modal-title">Order Cancellation</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <div class="row mx-0 px-3">
+                            <div class="col-lg-12">
+                              <div class="row mx-0">
+                                <div class="col-lg-12 px-0">
+                                  <div class="col-lg-12 mt-3 container-fluid">
+                                    <form [formGroup]="cancelOrderForm" (change)="selectReason()">
+                                      <div class="col-lg-12-px-0"> --> 
+                                       <!-- <div class="form-group  text-light font-400 w-100 d-inline-block p-0 ">
+                                        <select formControlName="reason">
+                                          <option [defaultSelected]=true>Choose reason</option>
+                                          <option>Expected delievery time is long</option>
+                                          <option>Price for the product has decreased</option>
+                                          <option>Need different size or color</option>
+                                          <option>I want to cancel due to product quality issue</option>
+                                          <option>I will not be available at home on delievery day</option>
+                                          <option>I want to change my phone number</option>
+                                          <option>I have purchased the product elsewhere</option>
+                                          <option>I want to change address for order</option>
+                                          <option>I have changed my mind</option>
+                                          <option>Other</option>
+                                        </select>
+                                      </div> -->
+                                      <!-- </div> -->
+                                      <!-- <div class="form-group" *ngIf="show==true">
+                                        <p> write the reason to cancel: </p>
+                                        <textarea id="w3review" name="w3review" rows="4" cols="25"
+                                          formControlName="text">
+                                        </textarea>
+                                      </div>
+
+                                      <button type="submit" class="btn btn-primary">Submit</button> -->
+                                       <!-- <div class="modal-footer">
+                                        <button type="button" class="btn btn-light"
+                                          (click)="closeModal()">Close</button>
+                                         <button type="button" class="btn btn-light" (click)="save(order)">Save</button> -->
+                                      <!-- </div>
+                                    </form> 
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div> -->
+                 <!-- </ng-template> --> 
+                <!-- </div>  --> 
+
+                <!-- Order tracking section -->
+
+              <!-- </ng-container>  -->
+              
+              </div>
+              
+              
+                
+                <!-- <button *ngIf="productCount < allProducts.length" (click)="viewMore()">Load More Button</button>
+                <button *ngIf="productCount == allProducts.length" (click)="viewLess()">View Less Button</button>
+                 --> 
+                <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls>  -->
+
+                <!-- Ordered Tab -->
+                <div class="tab-pane fade" id="pills-ordered" role="tabpanel" aria-labelledby="pills-ordered-tab">
+                  <h5 class="text-dark font-500 mb-4 w-100">
+                    Ordered
+                  </h5>
+                  <ng-container *ngFor="let order of myOrders | slice:0:myOrders.length let i=index"> 
+                    <ng-container *ngIf="order.payLater != false || order.paymentStatus != 'none'">
+                     <ng-container *ngFor="let item of order.cartDetails ">
+                      <div class="my_order_crd_main" *ngIf="order.status !='cancelled'">
+                        <div class="best_sellers_prdct_on_det_pg_list">
+                          <div class="d-flex float-left pl-0">
+                            <div class="best_sellers_prdct_on_det_pg_list_img">
+                              <img class="img-fluid" [src]="item.product.thumbImages">
+                            </div>
+                          </div>
+                          <div class="d-flex w-50 float-left pl-3">
+                            <div class="prdct_sec_list_crd_mn_content p-0 w-100 d-inline-block">
+                              <h5 class="prdct_list_title mb-3 w-75 font-500 text-dark">
+                                {{item.product.name}}
+                              </h5>
+                              <p class="prdct_list_sub_title text-gray mb-2 w-75">
+                                {{item.product.description}}
+                              </p>
+                              <div class="prdct_list_price_det w-100 mb-4">
+                                <span class="badge_on_order float-left px-2 py-1 mr-2">
+                                  Order Number
+                                </span>
+                                <!-- <a href="javascript:void(0)"
+                                  class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                  View Order Details
+                                  <span class="material-icons ml-0">chevron_right</span>
+                                </a> -->
+                                <p class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                  {{order.orderNumber}}
+                                </p>
+                              </div>
+                               <div class="w-100 mb-3 d-inline-block">
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Size:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{item.product.size}}
+                                  
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Qty:
+                                </span>
+                                <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                  {{item.quantity}}
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Discount:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{roundOffDiscount(item.product.internalDiscount)}}
+                                  
+                                </span>
+                              </div> 
+                            </div>
+                          </div>
+                          <div class="d-inline-block text-right w-25 float-right pl-3 justify-content-end">
+                            <span class="font-600 font-20 text-dark price_fnl mr-1 d-block mb-5">
+                              ₹{{item.product.sellingPrice}}
+                            </span>
+                          </div>
+  
+                          <div class="d-inline-block w-100 pt-4 order_track_sec_my_order">
+                            <div class="row">
+                              <div class="hh-grayBox">
+                                <div class="row">
+                                  <ng-container *ngFor="let status of order.activities">
+                                    <div class="order-tracking completed">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">{{status['activity']}}</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">{{status['date'] | date : Date}}</span>
+                                      </p>
+                                    </div>
+                                  </ng-container>
+                                  
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+  
+                          <!-- <div class="d-inline-block w-100 pt-4 order_track_sec_my_order">
+                            <div class="row">
+                              <div class="hh-grayBox">
+                                <div class="row justify-content-between">
+                                  <ng-container *ngFor="let status of order.activities">
+                                    <div class="order-tracking completed">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">{{status['activity']}}</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">{{status['date'] | date : 'long'}}</span>
+                                      </p>
+                                    </div>
+                                  </ng-container>
+                                  
+                                  <div class="order-tracking">
+                                    <span class="is-complete"></span>
+                                    <p>
+                                      <span class="font-500 text-dark mb-2">Order Out for Delivery</span>
+                                      <br>
+                                      <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span>
+                                    </p>
+                                  </div>
+                                  <div class="order-tracking">
+                                    <span class="is-complete"></span>
+                                    <p>
+                                      <span class="font-500 text-dark mb-2">Order Delivered</span>
+                                      <br>
+                                      <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span> 
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                          
+                        </div>
+                      
+                      </div>
+                      <div class="prdct_list_price_det w-100 mb-4" *ngIf="order.status !='cancelled'"
+                            style="max-width: 200px;">
+                            <a href="javascript:void(0)"
+                              class="btn-theme-border w-100 text-center px-0 font-500 d-inline-block py-3"
+                              (click)="cancelProductOrder(order)">
+                              Cancel Order
+                            </a>
+                      </div>
+  
+                    
+  
+                      <!-- Cancel order modal  -->
+                    <div>
+                      <ng-template #modal>
+                        <div class="modal-header">
+                          <h4 class="modal-title">Order Cancellation</h4>
+                          <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+  
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                            <div class="row mx-0 px-3">
+                              <div class="col-lg-12">
+                                <div class="row mx-0">
+                                  <div class="col-lg-12 px-0">
+                                    <div class="col-lg-12 mt-3 container-fluid">
+                                      <form [formGroup]="cancelOrderForm" (change)="selectReason()">
+                                        <div class="col-lg-12-px-0"> 
+                                        <div class="form-group  text-light font-400 w-100 d-inline-block p-0 ">
+                                          <select formControlName="reason">
+                                            <option [defaultSelected]=true>Choose reason</option>
+                                            <option>Expected delievery time is long</option>
+                                            <option>Price for the product has decreased</option>
+                                            <option>Need different size or color</option>
+                                            <option>I want to cancel due to product quality issue</option>
+                                            <option>I will not be available at home on delievery day</option>
+                                            <option>I want to change my phone number</option>
+                                            <option>I have purchased the product elsewhere</option>
+                                            <option>I want to change address for order</option>
+                                            <option>I have changed my mind</option>
+                                            <option>Other</option>
+                                          </select>
+                                        </div>
+                                         </div>
+                                         <div class="form-group" *ngIf="show==true">
+                                          <p> write the reason to cancel: </p>
+                                          <textarea id="w3review" name="w3review" rows="4" cols="25"
+                                            formControlName="text">
+                                          </textarea>
+                                        </div>
+  
+                                         <!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-light"
+                                            (click)="closeModal()">Close</button>
+                                          <button type="button" class="btn btn-light" (click)="save(order)">Save</button>
+                                        </div>
+                                      </form>  
+                                     </div>
+  
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                   </ng-template>
+                  </div> 
+  
+                  <!-- Order tracking section -->
+                   
+  
+                    </ng-container>
+                  </ng-container>  
+                </ng-container>
+                  <ng-container *ngIf="myOrders && myOrders.length <= 0">
+                    <h1 class="prdct_list_sub_title text-gray mb-3">
+                      No Order present.
+                    </h1>
+                  </ng-container>
+                </div>
+
+                <!-- Delivered Tab -->
+                <div class="tab-pane fade" id="pills-delivered" role="tabpanel" aria-labelledby="pills-delivered-tab">
+                  <h5 class="text-dark font-500 mb-4 w-100">
+                    Delivered
+                  </h5>
+                  <ng-container *ngIf="deliveredOrderList.length > 0">
+                    <ng-container *ngFor="let order of deliveredOrderList | slice:0:deliveredOrderList.length let i=index"> 
+                      <ng-container *ngFor="let item of order.cartDetails ">
+                        <div class="my_order_crd_main">
+                          <div class="best_sellers_prdct_on_det_pg_list">
+                            <div class="d-flex float-left pl-0">
+                              <div class="best_sellers_prdct_on_det_pg_list_img">
+                                <img class="img-fluid" [src]="item.product.thumbImages">
+                              </div>
+                            </div>
+                            <div class="d-flex w-50 float-left pl-3">
+                              <div class="prdct_sec_list_crd_mn_content p-0 w-100 d-inline-block">
+                                <h5 class="prdct_list_title mb-3 w-75 font-500 text-dark">
+                                  {{item.product.name}}
+                                </h5>
+                                <p class="prdct_list_sub_title text-gray mb-2 w-75">
+                                  {{item.product.description}}
+                                </p>
+                                <div class="prdct_list_price_det w-100 mb-4">
+                                  <span class="badge_on_order float-left px-2 py-1 mr-2">
+                                    Order Number
+                                  </span>
+                                  <!-- <a href="javascript:void(0)"
+                                    class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                    View Order Details
+                                    <span class="material-icons ml-0">chevron_right</span>
+                                  </a> -->
+                                  <p class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                    {{order.orderNumber}}
+                                  </p>
+                                </div>
+                                <div class="w-100 mb-3 d-inline-block">
+                                  <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                    Size:
+                                  </span>
+                                  <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                    {{item.product.size}}
+                                    
+                                  </span>
+                                  <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                    Qty:
+                                  </span>
+                                  <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                    {{item.quantity}}
+                                  </span>
+                                  <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                    Discount:
+                                  </span>
+                                  <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                    {{roundOffDiscount(item.product.internalDiscount)}}%
+                                    
+                                  </span>
+                                </div>
+                              </div>
+                              
+                              <!-- <div class="w-100 mb-3 d-inline-block">
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Size:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{item.product.size}}
+                                  
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Qty:
+                                </span>
+                                <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                  {{item.quantity}}
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Discount:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{item.product.internalDiscount}}
+                                  
+                                </span>
+                              </div> -->
+                            </div>
+                            <div class="d-inline-block text-right w-25 float-right pl-3 justify-content-end">
+                              <span class="font-600 font-20 text-dark price_fnl mr-1 d-block mb-5">
+                                ₹{{item.product.sellingPrice}}
+                              </span>
+                            </div>
+    
+                            <!-- <div class="d-inline-block w-100 pt-4 order_track_sec_my_order">
+                              <div class="row">
+                                <div class="hh-grayBox">
+                                  <div class="row justify-content-between">
+                                    <ng-container *ngFor="let status of order.activities">
+                                      <div class="order-tracking completed">
+                                        <span class="is-complete"></span>
+                                        <p>
+                                          <span class="font-500 text-dark mb-2">{{status['activity']}}</span>
+                                          <br>
+                                          <span class="mt-2 d-block font-14 text-gray">{{status['date'] | date : 'long'}}</span>
+                                        </p>
+                                      </div>
+                                    </ng-container>
+                                    
+                                    <div class="order-tracking">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">Order Out for Delivery</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span>
+                                      </p>
+                                    </div>
+                                    <div class="order-tracking">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">Order Delivered</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span> 
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> -->
+                            
+                          </div>
+                        
+                        </div>
+                        <div class="prdct_list_price_det w-100 mb-4" *ngIf="order.status !='cancelled'"
+                              style="max-width: 200px;">
+                              <a href="javascript:void(0)"
+                                class="btn-theme-border w-100 text-center px-0 font-500 d-inline-block py-3"
+                                (click)="cancelProductOrder(order)">
+                                Cancel Order
+                              </a>
+                        </div>
+    
+                      
+    
+                        <!-- Cancel order modal  -->
+                      <div>
+                        <ng-template #modal>
+                          <div class="modal-header">
+                            <h4 class="modal-title">Order Cancellation</h4>
+                            <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+    
+                          <div class="modal-body">
+                            <div class="container-fluid">
+                              <div class="row mx-0 px-3">
+                                <div class="col-lg-12">
+                                  <div class="row mx-0">
+                                    <div class="col-lg-12 px-0">
+                                      <div class="col-lg-12 mt-3 container-fluid">
+                                        <form [formGroup]="cancelOrderForm" (change)="selectReason()">
+                                          <div class="col-lg-12-px-0"> 
+                                          <div class="form-group  text-light font-400 w-100 d-inline-block p-0 ">
+                                            <select formControlName="reason">
+                                              <option [defaultSelected]=true>Choose reason</option>
+                                              <option>Expected delievery time is long</option>
+                                              <option>Price for the product has decreased</option>
+                                              <option>Need different size or color</option>
+                                              <option>I want to cancel due to product quality issue</option>
+                                              <option>I will not be available at home on delievery day</option>
+                                              <option>I want to change my phone number</option>
+                                              <option>I have purchased the product elsewhere</option>
+                                              <option>I want to change address for order</option>
+                                              <option>I have changed my mind</option>
+                                              <option>Other</option>
+                                            </select>
+                                          </div>
+                                           </div>
+                                           <div class="form-group" *ngIf="show==true">
+                                            <p> write the reason to cancel: </p>
+                                            <textarea id="w3review" name="w3review" rows="4" cols="25"
+                                              formControlName="text">
+                                            </textarea>
+                                          </div>
+    
+                                           <!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-light"
+                                              (click)="closeModal()">Close</button>
+                                            <button type="button" class="btn btn-light" (click)="save(order)">Save</button>
+                                          </div>
+                                        </form>  
+                                       </div>
+    
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                     </ng-template>
+                    </div> 
+    
+                    <!-- Order tracking section -->
+                     
+    
+                    </ng-container>
+                    </ng-container>
+                  </ng-container> 
+                  <ng-container *ngIf="deliveredOrderList && deliveredOrderList.length <= 0">
+                    <h1 class="prdct_list_sub_title text-gray mb-3">
+                      No Order present.
+                    </h1>
+                  </ng-container>
+                  
+                </div>
+
+                <!-- Return Policy Tab -->
+                <div class="tab-pane fade" id="pills-exchange" role="tabpanel" aria-labelledby="pills-exchange-tab">
+                  <h5 class="text-dark font-500 mb-4 w-100">
+                    Exchanged
+                  </h5>
+                  <ng-container *ngIf="exchangedOrderList.length > 0">
+                    <ng-container *ngFor="let order of exchangedOrderList | slice:0:exchangedOrderList.length let i=index"> 
+                      <ng-container *ngFor="let item of order.cartDetails ">
+                        <div class="my_order_crd_main">
+                          <div class="best_sellers_prdct_on_det_pg_list">
+                            <div class="d-flex float-left pl-0">
+                              <div class="best_sellers_prdct_on_det_pg_list_img">
+                                <img class="img-fluid" [src]="item.product.thumbImages">
+                              </div>
+                            </div>
+                            <div class="d-flex w-50 float-left pl-3">
+                              <div class="prdct_sec_list_crd_mn_content p-0 w-100 d-inline-block">
+                                <h5 class="prdct_list_title mb-3 w-75 font-500 text-dark">
+                                  {{item.product.name}}
+                                </h5>
+                                <p class="prdct_list_sub_title text-gray mb-2 w-75">
+                                  {{item.product.description}}
+                                </p>
+                                <div class="prdct_list_price_det w-100 mb-4">
+                                  <span class="badge_on_order float-left px-2 py-1 mr-2">
+                                    Order Number
+                                  </span>
+                                  <!-- <a href="javascript:void(0)"
+                                    class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                    View Order Details
+                                    <span class="material-icons ml-0">chevron_right</span>
+                                  </a> -->
+                                  <p class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                    {{order.orderNumber}}
+                                  </p>
+                                </div>
+                                <div class="w-100 mb-3 d-inline-block">
+                                  <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                    Size:
+                                  </span>
+                                  <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                    {{item.product.size}}
+                                    
+                                  </span>
+                                  <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                    Qty:
+                                  </span>
+                                  <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                    {{item.quantity}}
+                                  </span>
+                                  <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                    Discount:
+                                  </span>
+                                  <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                    {{roundOffDiscount(item.product.internalDiscount)}}%
+                                    
+                                  </span>
+                                </div>
+                              </div>
+                              
+                              <!-- <div class="w-100 mb-3 d-inline-block">
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Size:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{item.product.size}}
+                                  
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Qty:
+                                </span>
+                                <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                  {{item.quantity}}
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Discount:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{item.product.internalDiscount}}
+                                  
+                                </span>
+                              </div> -->
+                            </div>
+                            <div class="d-inline-block text-right w-25 float-right pl-3 justify-content-end">
+                              <span class="font-600 font-20 text-dark price_fnl mr-1 d-block mb-5">
+                                ₹{{item.product.sellingPrice}}
+                              </span>
+                            </div>
+    
+                            <!-- <div class="d-inline-block w-100 pt-4 order_track_sec_my_order">
+                              <div class="row">
+                                <div class="hh-grayBox">
+                                  <div class="row justify-content-between">
+                                    <ng-container *ngFor="let status of order.activities">
+                                      <div class="order-tracking completed">
+                                        <span class="is-complete"></span>
+                                        <p>
+                                          <span class="font-500 text-dark mb-2">{{status['activity']}}</span>
+                                          <br>
+                                          <span class="mt-2 d-block font-14 text-gray">{{status['date'] | date : 'long'}}</span>
+                                        </p>
+                                      </div>
+                                    </ng-container>
+                                    
+                                    <div class="order-tracking">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">Order Out for Delivery</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span>
+                                      </p>
+                                    </div>
+                                    <div class="order-tracking">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">Order Delivered</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span> 
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> -->
+                            
+                          </div>
+                        
+                        </div>
+                        <div class="prdct_list_price_det w-100 mb-4" *ngIf="order.status !='cancelled'"
+                              style="max-width: 200px;">
+                              <a href="javascript:void(0)"
+                                class="btn-theme-border w-100 text-center px-0 font-500 d-inline-block py-3"
+                                (click)="cancelProductOrder(order)">
+                                Cancel Order
+                              </a>
+                        </div>
+    
+                      
+    
+                        <!-- Cancel order modal  -->
+                      <div>
+                        <ng-template #modal>
+                          <div class="modal-header">
+                            <h4 class="modal-title">Order Cancellation</h4>
+                            <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+    
+                          <div class="modal-body">
+                            <div class="container-fluid">
+                              <div class="row mx-0 px-3">
+                                <div class="col-lg-12">
+                                  <div class="row mx-0">
+                                    <div class="col-lg-12 px-0">
+                                      <div class="col-lg-12 mt-3 container-fluid">
+                                        <form [formGroup]="cancelOrderForm" (change)="selectReason()">
+                                          <div class="col-lg-12-px-0"> 
+                                          <div class="form-group  text-light font-400 w-100 d-inline-block p-0 ">
+                                            <select formControlName="reason">
+                                              <option [defaultSelected]=true>Choose reason</option>
+                                              <option>Expected delievery time is long</option>
+                                              <option>Price for the product has decreased</option>
+                                              <option>Need different size or color</option>
+                                              <option>I want to cancel due to product quality issue</option>
+                                              <option>I will not be available at home on delievery day</option>
+                                              <option>I want to change my phone number</option>
+                                              <option>I have purchased the product elsewhere</option>
+                                              <option>I want to change address for order</option>
+                                              <option>I have changed my mind</option>
+                                              <option>Other</option>
+                                            </select>
+                                          </div>
+                                           </div>
+                                           <div class="form-group" *ngIf="show==true">
+                                            <p> write the reason to cancel: </p>
+                                            <textarea id="w3review" name="w3review" rows="4" cols="25"
+                                              formControlName="text">
+                                            </textarea>
+                                          </div>
+    
+                                           <!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-light"
+                                              (click)="closeModal()">Close</button>
+                                            <button type="button" class="btn btn-light" (click)="save(order)">Save</button>
+                                          </div>
+                                        </form>  
+                                       </div>
+    
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                     </ng-template>
+                    </div> 
+    
+                    <!-- Order tracking section -->
+                     
+    
+                    </ng-container>
+                    </ng-container>
+                  </ng-container> 
+                  <ng-container *ngIf="exchangedOrderList && exchangedOrderList.length <= 0">
+                    <h1 class="prdct_list_sub_title text-gray mb-3">
+                      No Order present.
+                    </h1>
+                  </ng-container>
+                </div>
+
+                <!-- Return Policy Tab -->
+                <div class="tab-pane fade" id="pills-return" role="tabpanel" aria-labelledby="pills-return-tab">
+                  <h5 class="text-dark font-500 mb-4 w-100">
+                    Returned
+                  </h5>
+                  
+                  <ng-container *ngIf="returnedOrderList.length > 0">
+                    <ng-container *ngFor="let order of returnedOrderList | slice:0:returnedOrderList.length let i=index"> 
+                      <ng-container *ngFor="let item of order.cartDetails ">
+                        <div class="my_order_crd_main">
+                          <div class="best_sellers_prdct_on_det_pg_list">
+                            <div class="d-flex float-left pl-0">
+                              <div class="best_sellers_prdct_on_det_pg_list_img">
+                                <img class="img-fluid" [src]="item.product.thumbImages">
+                              </div>
+                            </div>
+                            <div class="d-flex w-50 float-left pl-3">
+                              <div class="prdct_sec_list_crd_mn_content p-0 w-100 d-inline-block">
+                                <h5 class="prdct_list_title mb-3 w-75 font-500 text-dark">
+                                  {{item.product.name}}
+                                </h5>
+                                <p class="prdct_list_sub_title text-gray mb-2 w-75">
+                                  {{item.product.description}}
+                                </p>
+                                <div class="prdct_list_price_det w-100 mb-4">
+                                  <span class="badge_on_order float-left px-2 py-1 mr-2">
+                                    Order Number
+                                  </span>
+                                  <!-- <a href="javascript:void(0)"
+                                    class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                    View Order Details
+                                    <span class="material-icons ml-0">chevron_right</span>
+                                  </a> -->
+                                  <p class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                    {{order.orderNumber}}
+                                  </p>
+                                </div>
+                                <div class="w-100 mb-3 d-inline-block">
+                                  <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                    Size:
+                                  </span>
+                                  <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                    {{item.product.size}}
+                                    
+                                  </span>
+                                  <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                    Qty:
+                                  </span>
+                                  <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                    {{item.quantity}}
+                                  </span>
+                                  <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                    Discount:
+                                  </span>
+                                  <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                    {{roundOffDiscount(item.product.internalDiscount)}}%
+                                    
+                                  </span>
+                                </div>
+                              </div>
+                              
+                              <!-- <div class="w-100 mb-3 d-inline-block">
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Size:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{item.product.size}}
+                                  
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Qty:
+                                </span>
+                                <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                  {{item.quantity}}
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Discount:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{item.product.internalDiscount}}
+                                  
+                                </span>
+                              </div> -->
+                            </div>
+                            <div class="d-inline-block text-right w-25 float-right pl-3 justify-content-end">
+                              <span class="font-600 font-20 text-dark price_fnl mr-1 d-block mb-5">
+                                ₹{{item.product.sellingPrice}}
+                              </span>
+                            </div>
+    
+                            <!-- <div class="d-inline-block w-100 pt-4 order_track_sec_my_order">
+                              <div class="row">
+                                <div class="hh-grayBox">
+                                  <div class="row justify-content-between">
+                                    <ng-container *ngFor="let status of order.activities">
+                                      <div class="order-tracking completed">
+                                        <span class="is-complete"></span>
+                                        <p>
+                                          <span class="font-500 text-dark mb-2">{{status['activity']}}</span>
+                                          <br>
+                                          <span class="mt-2 d-block font-14 text-gray">{{status['date'] | date : 'long'}}</span>
+                                        </p>
+                                      </div>
+                                    </ng-container>
+                                    
+                                    <div class="order-tracking">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">Order Out for Delivery</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span>
+                                      </p>
+                                    </div>
+                                    <div class="order-tracking">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">Order Delivered</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span> 
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> -->
+                            
+                          </div>
+                        
+                        </div>
+                        <div class="prdct_list_price_det w-100 mb-4" *ngIf="order.status !='cancelled'"
+                              style="max-width: 200px;">
+                              <a href="javascript:void(0)"
+                                class="btn-theme-border w-100 text-center px-0 font-500 d-inline-block py-3"
+                                (click)="cancelProductOrder(order)">
+                                Cancel Order
+                              </a>
+                        </div>
+    
+                      
+    
+                        <!-- Cancel order modal  -->
+                      <div>
+                        <ng-template #modal>
+                          <div class="modal-header">
+                            <h4 class="modal-title">Order Cancellation</h4>
+                            <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+    
+                          <div class="modal-body">
+                            <div class="container-fluid">
+                              <div class="row mx-0 px-3">
+                                <div class="col-lg-12">
+                                  <div class="row mx-0">
+                                    <div class="col-lg-12 px-0">
+                                      <div class="col-lg-12 mt-3 container-fluid">
+                                        <form [formGroup]="cancelOrderForm" (change)="selectReason()">
+                                          <div class="col-lg-12-px-0"> 
+                                          <div class="form-group  text-light font-400 w-100 d-inline-block p-0 ">
+                                            <select formControlName="reason">
+                                              <option [defaultSelected]=true>Choose reason</option>
+                                              <option>Expected delievery time is long</option>
+                                              <option>Price for the product has decreased</option>
+                                              <option>Need different size or color</option>
+                                              <option>I want to cancel due to product quality issue</option>
+                                              <option>I will not be available at home on delievery day</option>
+                                              <option>I want to change my phone number</option>
+                                              <option>I have purchased the product elsewhere</option>
+                                              <option>I want to change address for order</option>
+                                              <option>I have changed my mind</option>
+                                              <option>Other</option>
+                                            </select>
+                                          </div>
+                                           </div>
+                                           <div class="form-group" *ngIf="show==true">
+                                            <p> write the reason to cancel: </p>
+                                            <textarea id="w3review" name="w3review" rows="4" cols="25"
+                                              formControlName="text">
+                                            </textarea>
+                                          </div>
+    
+                                           <!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-light"
+                                              (click)="closeModal()">Close</button>
+                                            <button type="button" class="btn btn-light" (click)="save(order)">Save</button>
+                                          </div>
+                                        </form>  
+                                       </div>
+    
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                     </ng-template>
+                    </div> 
+    
+                    <!-- Order tracking section -->
+                     
+    
+                    </ng-container>
+                    </ng-container>
+                  </ng-container> 
+                  <ng-container *ngIf="returnedOrderList && returnedOrderList.length <= 0">
+                    <h1 class="prdct_list_sub_title text-gray mb-3">
+                      No Order present.
+                    </h1>
+                  </ng-container>
+                </div>    
+
+                <!-- Cancelled Tab -->
+                <div class="tab-pane fade" id="pills-cancelled" role="tabpanel" aria-labelledby="pills-cancelled-tab">
+                  <h5 class="text-dark font-500 mb-4 w-100">
+                    Cancelled
+                  </h5>
+                  <ng-container *ngFor="let order of cancelOrderList | slice:0:myOrders.length let i=index"> 
+                    <ng-container *ngFor="let item of order.cartDetails ">
+                      <div class="my_order_crd_main" >
+                        <div class="best_sellers_prdct_on_det_pg_list">
+                          <div class="d-flex float-left pl-0">
+                            <div class="best_sellers_prdct_on_det_pg_list_img">
+                              <img class="img-fluid" [src]="item.product.thumbImages">
+                            </div>
+                          </div>
+                          <div class="d-flex w-50 float-left pl-3">
+                            <div class="prdct_sec_list_crd_mn_content p-0 w-100 d-inline-block">
+                              <h5 class="prdct_list_title mb-3 w-75 font-500 text-dark">
+                                {{item.product.name}}
+                              </h5>
+                              <p class="prdct_list_sub_title text-gray mb-2 w-75">
+                                {{item.product.description}}
+                              </p>
+                              <div class="prdct_list_price_det w-100 mb-4">
+                                <span class="badge_on_order float-left px-2 py-1 mr-2">
+                                  Order Number
+                                </span>
+                                <!-- <a href="javascript:void(0)"
+                                  class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                  View Order Details
+                                  <span class="material-icons ml-0">chevron_right</span>
+                                </a> -->
+                                <p class="font-16 text-dark p-1 ml-2 d-flex text-decoration-none">
+                                  {{order.orderNumber}}
+                                </p>
+                              </div>
+                              <div class="w-100 mb-3 d-inline-block">
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Size:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{item.product.size}}
+                                  
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Qty:
+                                </span>
+                                <span class="material_prdct_spn float-left font-500 px-4 py-1 mr-2">
+                                  {{item.quantity}}
+                                </span>
+                                <span class="badge_on_order text-gray float-left px-2 py-1 mr-2">
+                                  Discount:
+                                </span>
+                                <span class="float-left material_prdct_spn font-500 px-4 py-1 mr-2">
+                                  {{roundOffDiscount(item.product.internalDiscount)}}%
+                                  
+                                </span>
+                              </div> 
+                            </div>
+                          </div>
+                          <div class="d-inline-block text-right w-25 float-right pl-3 justify-content-end">
+                            <span class="font-600 font-20 text-dark price_fnl mr-1 d-block mb-5">
+                              ₹{{item.product.sellingPrice}}
+                            </span>
+                          </div>
+  
+                          <div class="d-inline-block w-100 pt-4 order_track_sec_my_order">
+                            <div class="row">
+                              <div class="hh-grayBox">
+                                <div class="row">
+                                  <ng-container *ngFor="let status of order.activities">
+                                    <div class="order-tracking completed">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">{{status['activity']}}</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">{{status['date'] | date : Date}}</span>
+                                      </p>
+                                    </div>
+                                  </ng-container>
+                                  
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+  
+                          <!-- <div class="d-inline-block w-100 pt-4 order_track_sec_my_order">
+                            <div class="row">
+                              <div class="hh-grayBox">
+                                <div class="row justify-content-between">
+                                  <ng-container *ngFor="let status of order.activities">
+                                    <div class="order-tracking completed">
+                                      <span class="is-complete"></span>
+                                      <p>
+                                        <span class="font-500 text-dark mb-2">{{status['activity']}}</span>
+                                        <br>
+                                        <span class="mt-2 d-block font-14 text-gray">{{status['date'] | date : 'long'}}</span>
+                                      </p>
+                                    </div>
+                                  </ng-container>
+                                  
+                                  <div class="order-tracking">
+                                    <span class="is-complete"></span>
+                                    <p>
+                                      <span class="font-500 text-dark mb-2">Order Out for Delivery</span>
+                                      <br>
+                                      <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span>
+                                    </p>
+                                  </div>
+                                  <div class="order-tracking">
+                                    <span class="is-complete"></span>
+                                    <p>
+                                      <span class="font-500 text-dark mb-2">Order Delivered</span>
+                                      <br>
+                                      <span class="mt-2 d-block font-14 text-gray">Fri, June 28</span> 
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                          
+                        </div>
+                      
+                      </div>
+                     
+                    
+  
+                      
+  
+                  </ng-container>
+                  </ng-container>
+                  <ng-container *ngIf="cancelOrderList && cancelOrderList.length <= 0">
+                    <h1 class="prdct_list_sub_title text-gray mb-3">
+                      No Order present.
+                    </h1>
+                  </ng-container>
+                </div>
+
+
+
+
+
+
+
+
+                <!-- Profile section End -->

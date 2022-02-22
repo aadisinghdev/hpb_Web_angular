@@ -1,0 +1,124 @@
+<!-- Breadcrumb section -->
+
+<div class="jumbotron jumbotron-fluid breadcrumb_jumbo_custom">
+    <div class="container text-center">
+        <h1 class="text-dark font-500 mb-0">
+            Privacy Policy
+        </h1>
+        <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+            <ol class="breadcrumb mb-0 bg-transparent">
+                <li class="breadcrumb-item">
+                    <a href="javascript:void(0)" [routerLink]="['/home']"
+                        class="text-gray font-400 text-font-18">Home</a>
+                </li>
+                <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+                    Privacy Policy
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Breadcrumb End -->
+
+<!-- Faq's section -->
+
+<section class="faq_sec">
+    <div class="container-fluid">
+        <div class="row mx-0 px-5">
+            <div class="col-lg-12">
+                <div class="card privacy_card">
+                    <div class="card-head">
+                        <h2 class="mb-0 privacy_head">
+                            Privacy Policy
+                            <!-- <span class="material-icons">expand_more</span> -->
+                        </h2>
+                    </div>
+                    <div class="collapse show">
+                        <div class="card-body">
+                            This Privacy Policy provides you with details about the manner in which your data is
+                            received,
+                            collected, stored and used by us. You are advised to read this Privacy Policy carefully. By
+                            visiting Half Price Bazar’s website, you expressly give us consent to use and disclose your
+                            personal information in accordance with this Privacy Policy. If you do not agree to the
+                            terms of
+                            this Privacy Policy, please do not use or access Half Price Bazar website. We at Half Price
+                            Bazar
+                            take data privacy and security extremely seriously and work to ensure that we are fully
+                            compliant
+                            with the various regulations dealing with privacy. We at Half Price Bazar value your trust
+                            and
+                            respect your privacy.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" id="accordionExample">
+                    <ng-container *ngFor="let item of policies;let idx = index">
+                        <div class="card">
+                            <div class="card-head" [id]="'heading'+idx">
+                                <h2 class="mb-0" data-toggle="collapse" [attr.data-target]="'#collapse'+idx"
+                                    aria-expanded="true" [attr.aria-controls]="'collapse'+idx">
+                                    <span class="material-icons">expand_more</span>
+                                    {{item.policy_name}}
+                                </h2>
+                            </div>
+
+                            <div [id]="'collapse'+idx" class="collapse " [attr.aria-labelledby]="'heading'+idx"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    {{item.policy}}
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <!-- <div class="card">
+                        <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="material-icons">expand_more</span>
+                                PERSONAL INFORMATION
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                In the course of registering for and availing various services we provide from time to
+                                time through Half Price Bazar(“Services”) you may be required to give certain details,
+                                including your name, address, contact number, email address (“Personal Information”). By
+                                using the Half Price Bazar website or registering yourself, you authorize us to contact
+                                you via email or phone call or SMS and offer you Services you have opted for, imparting
+                                knowledge about products listed on our application, as well as for web aggregation.
+                                Additionally, by registration, you authorize us to send SMS/email alerts to you for your
+                                login details and any other service requirements or advertising messages/emails.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head" id="headingThree">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                <span class="material-icons">expand_more</span>
+                                Collapsible Group Item #3
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Faq's section End -->

@@ -1,0 +1,207 @@
+<!-- Breadcrumb section -->
+
+<div class="jumbotron jumbotron-fluid breadcrumb_jumbo_custom">
+    <div class="container text-center">
+        <h1 class="text-dark font-500 mb-0">
+            {{subCatName}}
+        </h1>
+        <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+            <ol class="breadcrumb mb-0 bg-transparent">
+                <li class="breadcrumb-item">
+                    <a href="javascript:void(0)" class="text-gray font-400 text-font-18"
+                        [routerLink]="['/home']">Home</a>
+                </li>
+                <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+                    {{catName}}
+                </li>
+                <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+                    {{subCatName}}
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Breadcrumb End -->
+
+<!-- Product list section -->
+<ng-container *ngIf="isProductListLoaded" >
+<section class="prdct_sec_main" >
+    <div class="container-fluid" >
+        <div class="row mx-0" >
+            <!-- The Filter -->
+            <div class="col-lg-3 col-md-3 px-2 prdct_sec_main_col_3"  >
+                <div class="prdct_sec_filter_sec"  >
+
+                    <!-- Category -->
+                    <app-categories></app-categories>
+
+                    <!-- Color -->
+                    <yaari-shop-by-color (colorIds)="getColorIds($event)"></yaari-shop-by-color>
+
+                    <!-- Size -->
+                    <yaari-shop-by-size (size)="getSizes($event)"></yaari-shop-by-size>
+
+                    <!-- Price -->
+                     <!-- <div 
+                    <yaari-shop-by-price (priceId)="getPriceIds($event)"></yaari-shop-by-price>
+                   <div
+                        class="prdct_sec_filter_sec_all_pnl prdct_sec_filter_sec_by_rdio_pnl mb-5 d-inline-block w-100">
+                        <h4 class="font-500 pb-2 mb-4">
+                            <span class="material-icons prdct_sec_filter_sec_all_pnl_arw_icon">arrow_drop_down</span>
+                            Shop By Price
+                        </h4>
+                        <ul class="p-0 m-0" style="list-style-type:none">
+                            <div class="form-check py-2">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                    value="option1" checked>
+                                <label class="form-check-label font-500 font-18 text-dark ml-2 my-auto"
+                                    for="exampleRadios1">
+                                    ₹500-₹1000
+                                </label>
+                            </div>
+                            <div class="form-check py-2">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                    value="option2">
+                                <label class="form-check-label font-500 font-18 text-dark ml-2 my-auto"
+                                    for="exampleRadios2">
+                                    ₹500-₹1000
+                                </label>
+                            </div>
+                            <div class="form-check py-2">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                    value="option3" checked>
+                                <label class="form-check-label font-500 font-18 text-dark ml-2 my-auto"
+                                    for="exampleRadios3">
+                                    ₹500-₹1000
+                                </label>
+                            </div>
+                            <div class="form-check py-2">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
+                                    value="option4">
+                                <label class="form-check-label font-500 font-18 text-dark ml-2 my-auto"
+                                    for="exampleRadios4">
+                                    ₹500-₹1000
+                                </label>
+                            </div>
+                            <div class="form-check py-2">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5"
+                                    value="option5">
+                                <label class="form-check-label font-500 font-18 text-dark ml-2 my-auto"
+                                    for="exampleRadios5">
+                                    ₹500-₹1000
+                                </label>
+                            </div>
+                        </ul>
+                    </div>  -->
+
+                    <!-- Material -->
+                    <!-- <yaari-shop-by-material></yaari-shop-by-material> -->
+
+                    <!-- price -->
+                    <yaari-shop-by-price (priceId)="getPriceIds($event)"></yaari-shop-by-price>
+
+                    <!-- Brands -->
+                    <yaari-shop-by-brands (brandId)="getBrandIds($event)"></yaari-shop-by-brands>
+
+                    <!-- Discount -->
+                    <yaari-shop-by-discount (discountId)="getDiscountIds($event)"></yaari-shop-by-discount>
+                </div>
+            </div>
+
+            <!-- The List -->
+            <div class="col-lg-9 col-md-9 px-2 prdct_sec_main_col_9" *ngIf="productIds && productIds.length > 0">
+                <div class="sort_by_filter px-3 float-right w-100 text-right mb-4">
+                    <span class="font-18 text-gray font-500">
+                        Sort by
+                    </span>
+                    <select #selectList class="custom_select" (change)="sortProductList(selectList.value)">
+                        <option value="none">---Choose Filter---</option>
+                        <option value="low">Price -- Low to High</option>
+                        <!-- <option value="feature">Featured</option> -->
+                        <option value="high">Price -- High to Low</option>
+                        <option value="new">Newest First</option>
+                    </select>
+                </div>
+
+               
+                <div class="row w-100 mx-0" *ngIf="productIds.length > 0">
+                    <ng-container *ngFor="let productId of productIds">
+                        <div class="col-lg-4 col-md-6 my-3">
+                            <div class="prdct_sec_list_crd_mn">
+                                <div class="prdct_sec_list_crd_mn_img">
+                                    <span class="sale_badge">
+                                        Sale
+                                    </span>
+                                    <img class="img-fluid" [src]="getProduct(productId).thumbImages" (click)="showProductDetailView(getProduct(productId).id, productId)">
+                                    <ng-container *ngIf="wishlistIcon">
+                                    <span id="heart" class="wishlist_icon" (click)="addToWishList(getProduct(productId))"
+                                    *ngIf="!getProduct(productId)['is_added_in_wishlist'] ">
+                                        <span class="material-icons">favorite_border</span>
+                                    </span>
+                                    <span id="heart" class="wishlist_icon" (click)="removeProductFromWishlist(getProduct(productId)['wishlist_id'])"
+                                    *ngIf="getProduct(productId)['is_added_in_wishlist'] ">
+                                        <span class="material-icons">favorite</span>
+                                    </span>
+                                    </ng-container>
+                                </div>
+                                <div class="prdct_sec_list_crd_mn_content p-3 w-100 d-inline-block" 
+                                (click)="showProductDetailView(getProduct(productId).id, productId)">
+                                    <h5 class="prdct_list_title mb-3 font-500 text-dark">
+                                        {{getProduct(productId).name}}
+                                    </h5>
+                                    <p class="prdct_list_sub_title text-gray mb-3">
+                                        {{getProduct(productId).description}}
+                                    </p>
+                                    <div class="prdct_list_price_det w-100 mb-3">
+                                        <h5>
+                                            <span class="font-600 text-dark price_fnl mr-1">
+                                                ₹{{getProduct(productId).sellingPrice}}
+                                            </span>
+                                            <span class="font-500 text-gray price_cross position-relative font-16 mr-1">
+                                                ₹{{getProduct(productId).price}}
+                                            </span>
+                                            <span class="font-500 text-success offer_dis font-16 mr-1">
+                                               {{roundOffDiscount(getProduct(productId).internalDiscount)}}% off
+                                            </span>
+                                        </h5>
+                                    </div>
+                                    <!-- <div class="prdct_list_rating_ovrvw w-100 mb-2">
+                                        <span class="bg-success py-1 font-14 px-2 rounded text-light">
+                                            5.0
+                                            <span class="material-icons font-18 position-relative"
+                                                style="top:3px;">star</span>
+                                        </span>
+                                        <span class="text-gray font-16 font-400 ml-2">
+                                            10,350 ratings
+                                        </span>
+                                    </div> -->
+                                    <span *ngIf="getProduct(productId).sellingPrice>500" class="free_del_tg d-inline-block py-1 font-14 px-2 rounded mt-2">
+                                        Free delivery
+                                    </span>
+                                    <div class="row prdct_sec_list_crd_mn_btm_imgs mt-4">
+                                        <ng-container *ngFor="let image of getProduct(productId)?.images">
+                                            <div class="col-lg-3 col-md-3 col-3 px-2 text-center mx-auto">
+                                                <div class="prdct_sec_list_crd_mn_btm_imgs_cntnr mx-auto">
+                                                    <img class="img-fluid" [src]="productImgs(image)">
+                                                </div>
+                                            </div>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+               
+            </div>
+            <div class="col-lg-9 col-md-9 px-4  prdct_sec_main_col_9" *ngIf="productIds && productIds.length === 0">
+                <h1 class="prdct_list_sub_title text-gray mb-3">
+                    No products available .
+                </h1>
+            </div>  
+        </div>
+    </div>
+</section>
+</ng-container>
+<!-- Product list section End -->

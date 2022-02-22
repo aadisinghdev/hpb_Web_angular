@@ -1,0 +1,394 @@
+[
+    {
+        "category":"Shipping & Return Policy",
+        "categoryQuestions":[
+    {
+        "id":1,
+        "question":" What is Half Price Bazar Convenience Fee?",
+        "answer":" A convenience fee of INR 100/- will be applicable to the orders under 500/- on Half Price Bazar.If you return the order delivered to you, order convenience fee will not be refunded.However, if you cancel a prepaid order, your convenience fee will also be refunded."
+    }
+    ,
+    {
+        "id":2,
+        "question":"How long will it take for the order to reach me?",
+        "answer":"Please refer the product page for estimated shipping and delivery timelines. From the time of order placed ,it takes about 5-7 days for your orders to reach you.If you have placed an order with multiple items ,please note that your items may arrive in multiple shipments. The estimated delivery times are indicative , and on some occasions ,there might be some unavoidable delays beyond our control. We will keep you informed in case of any delays"
+    },
+    {
+      "id":3,
+      "question":"What can I do if my order dispatch is delayed?",
+      "answer":"We will try our best to get your products to you within the estimated delivery times. If the package has not reached you by the expected delivery date, please write to us at help.HPB@ydiconsumer.com and we will try our best to resolve your issues."
+    },
+    {
+        "id":4,
+        "question":"My order has been shipped. Can I track it?",
+        "answer":"Once your order has been dispatched, you can track the order from Order section. You can track the status of your package 24 hours after your order is dispatched from our warehouse or vendor location."
+    },
+    {
+        "id":5,
+        "question":"What is the return policy on Half Price Bazaar?",
+        "answer":"Most of our products are eligible for return and replacements. The return and exchange policy for every product is clearly mentioned on the product page.If the product is eligible for return/ replacement, you can raise the return/ replacement request from My Order section on the website within 5 days of delivery to request return and replacement. Only products which are unused, unworn, unwashed, undamaged, with all its labels and tags completely intact, in original packaging and eligible for return only can be returned/ replaced."
+    },
+    {
+        "id":6,
+        "question":"How are returns processed?",
+        "answer":"Once you request to return a product, a pick up is organised for the item. Our courier partners will come to pick up the item within 3-5 business days after your return request has been received. Once pickup is done, your refund will be initiated from our end."
+    },
+    {
+        "id":7,
+        "question":"Can I cancel my order?",
+        "answer":"You can cancel your order within 24 hours/before it gets dispatched through My Order section or by writing to us at help.HPB@ydiconsumer.com.**Half Price Bazaar reserves the right to cancel any order without pre-confirming the customer at any time and may verify any order before shipping the same to the customer that may include having a verbal or written confirmation from the customer."
+    },
+    {
+        "id":8,
+        "question":"How will I receive the refund for my cancelled or returned product?",
+        "answer":"In case of prepaid orders, money will be returned to the bank account/ credit/debit card where the payment was made from. For Cash on Delivery orders customers will be required to provide bank details/UPI ID where they would like to receive the refund."
+    },
+    {
+        "id":9,
+        "question":"How long does it take to receive a refund for a cancelled order or returned product?",
+        "answer":"We will process your refund within 5-7 business days in case of cancellation of an order. In case of returns, we will refund the money after the product has been picked up by our courier partner."
+    },
+    {
+        "id":10,
+        "question":"Can I return part of my order?",
+        "answer":"Yes. You can return any products that are eligible for returns within 5 days of delivery. Please do note there are some items that are not returnable or exchangeable."
+    },
+    {
+        "id":11,
+        "question":"My garment does not fit me. What can I do?",
+        "answer":"If the product does not fit and you would like a different size, please request for a size exchange through My order section or the customer service team within 5 days of receiving the product.Our team will try its best to help you for any size exchanges, subject to availability.In case the size you have requested is not available we will offer you the option to return the product instead."
+    },
+    {
+        "id":12,
+        "question":"How to check if product can be delivered to my PIN code?",
+        "answer":"You can check whether a product can be delivered to your PIN code on the product page."
+    }
+]
+},
+   {
+       "category":"Order Related",
+       "categoryQuestions":[
+    {
+        "id":13,
+        "question":"How do I track my order?",
+        "answer":"You can track the status of your order on the 'My Orders' section on our website once logged in.Once your order is dispatched you'll receive an email and SMS with the tracking number and the name of the courier company that is processing your order. "
+    },
+    {
+        "id":14,
+        "question":"I'm unsure that the order was successfully placed.",
+        "answer":"You can review the status of your order and other tracking related queries under the My Orders section. In case your money has been debited and you can't see your order under My Orders section, please recheck after 15-30 minutes or write us at help.HPB@ydiconsumer.com"
+    },
+    {
+        "id":15,
+        "question":"How long will it take for my order to reach me?",
+        "answer":"Please refer to the product page of the item purchased for estimated days for the item to get delivered. The delivery timelines may vary depending on the seller processing the order.Please note that for orders with multiple items, your item may arrive in multiple shipments based on the delivery dates. The estimated delivery time is indicative and on some occasions, there might be an unavoidable delay. We will keep you informed in case of any such delays."
+    },
+    {
+        "id":16,
+        "question":"An item is missing from my order",
+        "answer":"Our shipments go through rigorous quality check processes before they leave our warehouse. However, in the rare case of a missing item in your order, you can request for a replacement or refund within 5 days of  receiving the order.Once your request is received, We will provide you resolution within 72 hours.NOTE: If it is a case of replacement, it is subject to the availability of stock. In cases when a replacement may not be available, we will refund you the full amount."
+    },
+    {
+        "id":17,
+        "question":"The order I received is damaged",
+        "answer":"Our shipments go through rigorous quality check processes before they leave our warehouse. However, in the rare case that your product is damaged during shipment or transit, you can request for a replacement or refund within 5 days of receiving the order and write to us at help.HPB@ydiconsumer.com with pictures of the damaged good.Once your request is received, we will be responsible to pick the item from you. We will initiate the refund  or replacement process only if the products are received by us in their original packaging with their seals, labels and bar-codes intact.NOTE: If it is a case of replacement, it is subject to the availability of stock. In cases when a replacement may not be available, we will refund you the full amount"
+    },
+    {
+        "id":18,
+        "question":"I was not available to collect my order",
+        "answer":"If you were not available to collect your order, please reach out to us at help.HPB@ydiconsumer.com to reschedule delivery."
+    },
+    {
+        "id":19,
+        "question":"I want to change the size/colour of an item I ordered",
+        "answer":"If your order has not been dispatched yet, you can cancel the existing order and place a new one for the desired size/colour. In case of a prepaid order, the refund upon cancellation will get initiated within 3-5 days.If you have already received your order and want to change the size/colour, please refer to the product page of the item purchased for our exchange and return policy. If the product is eligible for exchange or return, you can request from an exchange or return from the 'My Orders' section. You can also reach out to us at help.HPB@ydiconsumer.com within 5 days of delivery to request exchange or return."
+    },
+    {
+        "id":20,
+        "question":" Can I delay the delivery date?",
+        "answer":"please reach out to us at help.HPB@ydiconsumer.com."
+    },
+    {
+        "id":21,
+        "question":"What can I do if my order dispatch is delayed?",
+        "answer":"We try our best to dispatch your order to fulfill the estimated delivery timeline however, there could be scenarios of delays from our brand partner.If your order dispatch is delayed, please reach out to us at help.HPB@ydiconsumer.com."
+    },
+    {
+        "id":22,
+        "question":" Can I modify the shipping address after the order is shipped?",
+        "answer":"If you wish to change your address or your phone number, you can do it before your order is shipped. Go to the 'My Order' section, select your order and click on 'Edit Shipping Information' to change your address"
+    },
+    {
+        "id":23,
+        "question":" I did not receive an invoice for my order",
+        "answer":"If you haven't received an invoice for your order, please reach out to us at help.HPB@ydiconsumer.com"
+    },
+    {
+        "id":24,
+        "question":"My order is not yet delivered ",
+        "answer":"We try our best to deliver your order within the estimated delivery timeline however, there could be scenarios of delays from our brand partner.If you haven't received your package by the expected delivery date, please reach out to us at help.HPB@ydiconsumer.com."
+    },
+    {
+        "id":25,
+        "question":"When will my order be shipped?",
+        "answer":"Once your order is dispatched, you can track your order from the My Orders section.For orders with multiple items, you may receive multiple parcels"
+    },
+    {
+        "id":26,
+        "question":"Will the delivery be reattempted if I am not available to collect my order?",
+        "answer":"Yes, if you are unavailable at the time of delivery we will reach out to you and reattempt to deliver your order.Please note that almost 3 attempts will be made to deliver your order post which orders will be sent back to our sellers/brand partners. For prepaid orders, the refund will be processed once the product is received at the seller's warehouse."
+    },
+    {
+        "id":27,
+        "question":" Does Half Price Bazaar deliver products outside India?",
+        "answer":"No. At this point, Half Price Bazaar delivers products only within India"
+    },
+    {
+        "id":28,
+        "question":"How can I get my order delivered faster?",
+        "answer":"Sorry, currently we do not have any service available to expedite the order delivery. In future, if we are offering such service and your area pincode is serviceable, you will receive a communication from our end"
+    },
+    {
+        "id":29,
+        "question":"How do I cancel my order? (once it has been shipped)",
+        "answer":"Product once shipped cannot be canceled. Please do the cancellation if required before the product is shipped."
+    }
+]
+},
+{
+
+     "category":"Cancellations Policy",
+     "categoryQuestions":[
+    {
+        "id":30,
+        "question":"How do I cancel my order? (before it has been shipped)",
+        "answer":"If the order or the item(s) that you want to cancel have not been shipped yet, you can cancel the order directly through your 'My order' section.If you have placed the order as a guest, signup/sign in with the email that you have used while placing an order and you can then track/cancel order through 'My Order' section.In such cases, the order will be cancelled and the money will be refunded to you within 3-5 business days after the cancellation request."
+    },
+    {
+        "id":31,
+        "question":"How long does it take to receive a refund for a cancelled order or returned product?",
+        "answer":"We will process your refund within 3-5 business days in case of cancellation of an order.In case of returns, we will refund the money after the product has been picked up by our courier partner. It can take 5- 7 days to reflect into your bank account as per the bank timelines"
+    },
+    {
+        "id":32,
+        "question":"Will shipping charges be refunded if I cancel my order?",
+        "answer":"If the full order is cancelled, then the shipping charges will get refunded.If part of an order is cancelled, then the shipping charges will not be refunded."
+    },
+    {
+        "id":33,
+        "question":"My request for cancellation has not been processed.",
+        "answer":"If your cancellation request has not been processed, please email us at help.HPB@ydiconsumer.com."
+    },
+    {
+        "id":34,
+        "question":"Where can I track my return?",
+        "answer":"You can track your return status in 'My Orders' section."
+    }
+]
+},
+{
+    "category":"Returns & Refunds",
+    "categoryQuestions":[
+    {
+        "id":35,
+        "question":"How are returns processed?",
+        "answer":"Once you request to return a product via My orders section through website, email or phone, a pick up is organized for the item. Our courier partner will come to pick up the item within 3-5 business days after your return request has been approved.Please note that the product should be unused and ready with proper tags. During pick up, our delivery agent may do a quality check on the return item. Once the product is picked up by our courier partner, a refund is initiated. It can take 5- 7 days to reflect into your bank account as per the bank timelines. You can track your return status from the My Order section."
+    },
+    {
+        "id":36,
+        "question":"What is Half Price Bazar's return policy?",
+        "answer":"Most of our products are eligible for return and refund for domestic orders. The return and exchange policy for every product is clearly mentioned on the product page. If the product is eligible for return, we request you to initiate return request within 5 days of delivery through one of the following steps:1) Via 'My Orders' section on the Half Price Bazar Website - easiest and fastest way to create return.2) Or write to us at help.HPB@ydiconsumer.com Only products that are unused, unworn, undamaged, have their original tags and labels intact, in original packaging are eligible for return."
+    },
+    {
+        "id":37,
+        "question":"Why wasn't my product picked up?",
+        "answer":"Once you have placed a return request, our field executives will pick-up the parcel within 5 business days.They will make almost 3 attempts to pick up the product post which picks up will be cancelled If our courier partner faces any issues in picking up your product, we will keep you informed."
+    },
+    {
+        "id":38,
+        "question":"I have requested for an exchange. By when will I get it?",
+        "answer":"Once you request to exchange a product via My orders section through website, email or phone, a pick up is organized for the item. Our courier partner will come to pick up the item within 3-5 business days after your exchange request has been approved.Please note that the product should be unused and ready with proper tags. During pick up, our delivery agent may do a quality check on the return item.This item is then brought back to our warehouse where it is checked by our quality control team. Once the product passes the quality control, a new replacement order is created.You can track the status of your exchange request from the My Order section."
+    },
+    {
+        "id":39,
+        "question":"Till how long do I have to return my order?",
+        "answer":"If the product is returnable, you can return it within 5 days of receiving the product."
+    },
+    {
+        "id":40,
+        "question":"How do I place a return/exchange request?",
+        "answer":"In case you are not satisfied or have changed your mind about a particular product, you can request a return or exchange within 5 days of delivery.Step 1: Follow one of the following steps:Via My Orders section .Click on 'My Orders'. Go to Order and select 'Return' or 'Exchange'. Proceed with reason for return and provide images of the product.Step 2: Once your request is received, we will be responsible to pick the item from you. We will initiate the refund or replacement process only if the products are received by us in their original packaging with their seals, labels and bar-codes intact.Note: If it is a case of replacement, it is subject to the availability of stock. In cases when a replacement may not be available, we will refund you the full amount."
+    },
+    {
+        "id":41,
+        "question":"I haven't received my refund.",
+        "answer":"We will process your refund within 3-5 business days in case of cancellation of an order. In case of returns, we will refund the money after the product has been picked up by our courier partner. It can take 5- 7 days to reflect into your bank account as per the bank timelines.For payments done through credit/debit cards/net banking/UPI, a refund will be processed to the same account from which the payment was made within 3-5 business days of product picked up. It may take 4-5 additional business days for the amount to reflect in your account.For cash on delivery transactions, we will initiate a bank transfer against the refund amount against the billing details shared by you. This process will be completed within 3-5 business days of product picked up and receiving your bank details. It will take an additional 2-3 business days for the amount to reflect in your account. Please share the correct bank account details with our support team for a seamless refund."
+    },
+    {
+        "id":42,
+        "question":"The product was returned, but I haven't received my refund.",
+        "answer":"We initiate the refund once the product is successfully picked up by our courier partner, however it takes 5-7 days to reflect in your bank account according to the bank timelines. In case of delay, please reach out to us at help.HPB@ydiconsumer.com."
+    },
+    {
+        "id":43,
+        "question":"Can I return a part of my order?",
+        "answer":"Yes, you can return a part of your order as long as the product is eligible for return. This should be done within 5 days of receiving the product.To create return:Step 1: Follow one of the following steps:Via My Orders section Click on 'My Orders'. Go to Order and select 'Return' or 'Exchange'. Proceed with reason for return and provide images of the product.Step 2: Once your request is received, we will be responsible to pick the item from you. We will initiate the refund or replacement process only if the products are received by us in their original packaging with their seals, labels and bar-codes intact Note: If it is a case of replacement, it is subject to the availability of stock. In cases when a replacement may not be available, we will refund you the full amount."
+    },
+    {
+        "id":44,
+        "question":"My return request got declined",
+        "answer":"Please reach out to us at help.HPB@ydiconsumer.com."
+    },
+    {
+        "id":45,
+        "question":"What products are not eligible for return?",
+        "answer":"For details on our return and exchange policy, please refer to the product page of the item ordered."
+    },
+    {
+        "id":46,
+        "question":"The refund amount processed is incorrect.",
+        "answer":"If you have received an incorrect refund amount, please reach out to us at help.HPB@ydiconsumer.com. "
+    },
+    {
+        "id":47,
+        "question":"When will my return be picked up?",
+        "answer":"Once you have placed a return request, our field executives will pick-up the parcel within 5 business days.They will make at most 3 attempts to pick up the product post which pick up will be cancelled."
+    },
+    {
+        "id":48,
+        "question":"How will I receive my refund for a COD order?",
+        "answer":"For all COD orders, the money will be refunded to your bank account.Please share your accurate bank account details during placing the return request in 'My orders' section of website or mail us at help.HPB@ydiconsumer.com to receive the refund amount.We will initiate a bank transfer against the refund amount in the bank details shared by you. Once we receive your bank details and product is picked up by courier partner refund is initiated in 3-5 business days It will take an additional 2-3 business days for the amount to reflect in your account as per bank timelines.  "
+    }
+]
+},
+{
+    "category":"Order Placement",
+    "categoryQuestions":[
+    {
+        "id":49,
+        "question":"Can I use my credit/debit card to pay for a COD order?",
+        "answer":"Once the mode of payment is selected as COD, you need to make the payment using cash, as our courier partners do not carry card swiping machine."
+    },
+    {
+        "id":50,
+        "question":"What are the different modes of payment?",
+        "answer":"You can make payment using multiple options:1. Debit and Credit Cards. 2. Net Banking 3. UPI4. Cash on delivery5. Wallet"
+    },
+    {
+        "id":51,
+        "question":"Why can't I see the COD option on my payment page?",
+        "answer":"If you do not see a COD option on your payment page, this may be due to one of the following reasons:Your order value may be less than Rs. 299 or over Rs. 9,999.Our courier partners may not support the Cash on Delivery option for your delivery address.You may have placed another order using the COD option which is pending delivery. If the amount of this order when added to your current order exceeds Rs. 9,999, then the COD option will be disabled temporarily."
+    },
+    {
+        "id":52,
+        "question":"Can I use my credit/debit card to pay for a COD order?",
+        "answer":"Half Price Bazaar reserves the right to determine the COD limit for every customer and/or orders. The COD limit includes any undelivered, unpaid orders and any new orders being placed."
+    },
+    {
+        "id":53,
+        "question":"Do you have an EMI option?",
+        "answer":"Unfortunately, Half Price Bazar does not have an EMI option yet."
+    },
+    {
+        "id":54,
+        "question":"Payment got debited but my order is not yet confirmed.",
+        "answer":"If your most recent order does not show up after successful payment, please refresh the page after some time.If you are still facing the same issue, please reach out to us at help.HPB@ydiconsumer.com."
+    },
+    {
+        "id":55,
+        "question":"I'm facing payment issues.",
+        "answer":"If your most recent order does not show up after successful payment, please refresh the page after some time. If you are still facing the same issue, please reach out to us at help.HPB@ydiconsumer.com."
+    }
+]
+},
+  {
+      "category":"Account Related",
+      "categoryQuestions":[
+    {
+        "id":56,
+        "question":"How do I create an account on Half Price Bazar?",
+        "answer":"You can create your account on Half Price Bazar by clicking on 'Your Account' and add your basic details in the 'Create Your Account' section."
+    },
+    {
+        "id":57,
+        "question":"Do I need to provide email ID to create an account on Half Price Bazaar?",
+        "answer":"Yes, adding your email ID is mandatory and it also helps you reset your password in case you've forgotton it."
+    },
+    {
+        "id":58,
+        "question":"How can i change my mobile number that I use to login on Half Price Bazaar?",
+        "answer":"You can log in to your account and change it from your Profile > Edit Profile."
+    },
+    {
+        "id":59,
+        "question":"I have forgotten my password.",
+        "answer":"When signing in, click on the 'Forgot Password' link below the login page. You will be then redirected to a new page where you need to fill in your registered email address and soon after you will receive an email with a link to 'reset your password'."
+    },
+    {
+        "id":60,
+        "question":"I want to deactivate my account",
+        "answer":"To deactivate your account, please reach out to us at help.HPB@ydiconsumer.com. "
+    },
+    {
+        "id":61,
+        "question":"I want to change the email address",
+        "answer":"Once your account is created, we will not be able to make any changes to your registered email address."
+    },
+    {
+        "id":62,
+        "question":"I want to change the account name",
+        "answer":"Once your account is created, we will not be able to make any changes to your account name."
+    },
+    {
+        "id":63,
+        "question":"I want to change the account name",
+        "answer":"Once your account is created, we will not be able to make any changes to your account name."
+    },
+    {
+        "id":64,
+        "question":"How do I add items to my wishlist?",
+        "answer":"Once your account is created, we will not be able to make any changes to your account name."
+    },
+    {
+        "id":65,
+        "question":"I am unable to add products to the wishlist.",
+        "answer":"To add an item to your wishlist, click on the heart icon on the top right corner of the product image.If you are still not able to add product to wishlist, please reach out to us at help.HPB@ydiconsumer.com."
+    }
+]
+  },
+  {
+      "category":"Others",
+      "categoryQuestions":[
+    {
+        "id":66,
+        "question":"I am not able to avail the displayed offer.",
+        "answer":"We request you to clear cache and cookies from your phone or desktop.If you are still facing the same issue, please mail us a snapshot of the error message at help.HPB@ydiconsumer.com Write to us"
+    },
+    {
+        "id":67,
+        "question":"I am facing technical issues on the website.",
+        "answer":"We request you to clear cache and cookies from your phone or desktop.If you are still facing the same issue, please mail us a snapshot of the error message at help.HPB@ydiconsumer.comwrite to us"
+    },
+    {
+        "id":68,
+        "question":"I am unable to add the promo code",
+        "answer":"We request you to mail us a snapshot of the error message at help.HPB@ydiconsumer.com."
+    },
+    {
+        "id":69,
+        "question":"An item's description/image/price is wrong",
+        "answer":"We request you to mail us a snapshot of the error message at help.HPB@ydiconsumer.com."
+    }
+]
+  },
+  {
+      "category":"Brand Association",
+      "categoryQuestions":[
+    {
+        "id":70,
+        "question":"I want to get associated with Half Price Bazar.",
+        "answer":"Please send an email to marketing.inquiry@halfpricebazar.com along with the relevant details."
+    }
+]
+  }
+]

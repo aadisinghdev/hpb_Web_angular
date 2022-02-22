@@ -1,0 +1,149 @@
+<!-- Breadcrumb section -->
+
+<div class="jumbotron jumbotron-fluid breadcrumb_jumbo_custom">
+    <div class="container text-center">
+      <h1 class="text-dark font-500 mb-0">
+        Create Your Account
+      </h1>
+      <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+        <ol class="breadcrumb mb-0 bg-transparent">
+          <li class="breadcrumb-item">
+            <a href="javascript:void(0)" class="text-gray font-400 text-font-18"
+            [routerLink]="['/home']">Home</a>
+          </li>
+          <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+            Create Account
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Breadcrumb End -->
+  
+  <!-- Sign Up section -->
+  
+  <section *ngIf="!otpForm" class="sing_in_sec">
+    <div class="container-fluid">
+      <div class="row mx-0 px-5">
+        <div class="col-lg-6 col-md-10 col-sm-12 mx-auto">
+          <form class="custom_form" [formGroup]="registerForm" (submit)="createUser()">
+            <div class="form-row">
+              <div class="form-group col-md-12 mb-4">
+                <input type="text" class="form-control" placeholder="First Name"
+                name="firstName" id="firstName" formControlName="first_name"
+                autocomplete="off" (blur)="validateFormField('name')"  required>
+              </div>
+              <div class="form-group col-md-12 mb-4">
+                <input type="text" class="form-control" placeholder="Last Name"
+                name="lastName" id="lastName" formControlName="last_name"
+                autocomplete="off" (blur)="validateFormField('last_name')" required>
+              </div>
+              <div class="form-group col-md-12 mb-4">
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+                name="email_id" id="email_id" formControlName="email"
+                autocomplete="off" (blur)="validateFormField('email')" required>
+              </div>
+              <div class="form-group col-md-12 mb-4">
+                <input type="text" class="form-control" id="inputNumber" placeholder="mobile"
+                name="mobile" id="mobile" readonly formControlName="mobile"
+                autocomplete="off" (blur)="validateFormField('mobile')" required>
+              </div>
+              <div class="form-group col-md-12 mb-4">
+                <input [type]="pass_field" class="form-control" id="inputPassword4" placeholder="Password"
+                name="password" id="password" formControlName="password" autocomplete="off"
+                (blur)="validateFormField('password')" required>
+                <span class="material-icons pass_hide_icons" *ngIf="showPassword" (click)="showPass('show')">visibility</span>
+                <span class="material-icons pass_hide_icons" *ngIf="!showPassword" (click)="showPass('hide')">visibility_off</span>
+              </div>
+              <div class="form-group col-md-12 mb-4">
+                <input [type]="pass_type" class="form-control" id="inputPassword4" placeholder="Confirm Password"
+                name="confirm_password" id="confirm_password" formControlName="confirm_password"
+                autocomplete="off" (blur)="validateFormField('confirm')" required> 
+                <span class="material-icons pass_hide_icons" *ngIf="isVisible" (click)="showConfirmPass('show')">visibility</span>
+                <span class="material-icons pass_hide_icons" *ngIf="!isVisible" (click)="showConfirmPass('hide')">visibility_off</span>
+              </div>
+              <!-- <div class="form-group col-md-12 mb-4 text-center py-1">
+                <a href="javaScript:void(0)" class="text-dark font-500 font-18">
+                  Forgot your password ?
+                </a>
+              </div> -->
+            </div>
+            <button type="submit" class="btn btn-theme font-18 w-100 py-4 mt-2"
+            [disabled]="registerForm.invalid">Create account</button>
+          </form>
+          <div class="d-inline-block w-100 text-center mt-4 mb-2">
+            <span class="text-dark font-400 font-18 mr-1">
+              Already have account?
+            </span>
+            <a [routerLink]="['/login']" class="text-dark font-400 font-18" style="text-decoration: underline;">
+              Try signing in
+            </a>
+          </div>
+          <div class="d-inline-block w-100 text-center my-3">
+            <a [routerLink]="['/home']" class="text-dark font-500 font-18">
+              Return to store
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Sign Up section End -->
+
+  <!-- Verify by OTP -->
+
+  <section *ngIf="otpForm" class="sing_in_sec">
+    <div class="container-fluid">
+      <div class="row mx-0 px-5">
+        <div class="col-lg-6 col-md-10 col-sm-12 mx-auto">
+              <form  class="custom_form" [formGroup]="generateOtpForm" (submit)="resetPassword()">
+                <div class="form-row">
+
+                  <div class="form-group col-md-12 mb-4" >
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Mobile No." (keypress)="onlyNumberAllowed($event)"
+                    (keyup)="validateFormField('mobile')" formControlName="mobile" name="inputEmail4" value="" [readonly]="!otpBtn">
+                  </div>
+                  
+                  <div class="terms_check">
+                    By continuing, you agree to HPB's 
+                    <a (click)="navigateToTermsAndConditions()">Terms of Use</a> and 
+                    <a (click)="navigateToPrivacyPolicy()">Policy</a> 
+                  </div>
+                  <div class="form-group col-md-12 mb-4" *ngIf="!otpBtn" >
+                    <input type="text" class="form-control p-3"  
+                    (keyup)="validateFormField('otp')" formControlName="otp" placeholder="Enter OTP">  
+                    <strong class="timer" *ngIf="showTimer">{{timeLeft}}</strong> 
+                    <div class="resend mt-2" *ngIf="showResendOtp">
+                      <a href="javascript:void(0)" (click)="resendOtp()">Resend Otp</a><br> 
+                      <!-- <span>{{chanceRemaining}} chance remaining</span> -->
+                    </div>   
+                  </div>
+
+                </div>
+                <button type="button" class="btn btn-theme font-18 w-100 py-4" *ngIf="otpBtn"  
+                [disabled]="disableButton || generateOtpForm.value.mobile.length!=10" (click)="timer(45)" (click)="generateOtp()" >Generate Otp</button>
+
+                <button type="button" class="btn btn-theme font-18 w-100 py-4" *ngIf="!otpBtn"  
+                [disabled]="!(generateOtpForm.value.otp.length == '4')" (click)="verifyOtp()">Verify Otp</button>
+            ` </form>
+          <div class="d-inline-block w-100 text-center mt-4 mb-2">
+            <span class="text-dark font-400 font-18 mr-1">
+              Already have account?
+            </span>
+            <a [routerLink]="['/login']" class="text-dark font-400 font-18" style="text-decoration: underline;">
+              Try signing in
+            </a>
+          </div>
+          <div class="d-inline-block w-100 text-center my-3">
+            <a [routerLink]="['/home']" class="text-dark font-500 font-18">
+              Return to store
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Verify by OTP end -->

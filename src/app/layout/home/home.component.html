@@ -1,0 +1,274 @@
+<ng-container *ngIf="isViewLoaded">
+  <header>
+    <owl-carousel-o [options]="customOptions" class="owl-carousel-header-banners">
+      <ng-template carouselSlide class="slide" style="height:679px">
+        <img src="../../../assets/images/Slider1-1.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('1','1','Indian Ethnic wear')">
+      </ng-template>
+      <ng-template carouselSlide class="slide" style="height:679px">
+        <img src="../../../assets/images/Slider1-2.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('1','2','Mens Wear')">
+      </ng-template>
+      <ng-template carouselSlide class="slide" style="height:679px">
+        <img src="../../../assets/images/Slider1-3.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('1','3','Western-Wear')">
+      </ng-template>
+      <ng-template carouselSlide class="slide" style="height:679px">
+        <img src="../../../assets/images/Slider1-4.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('1','4','Discount')">
+      </ng-template>
+    </owl-carousel-o>
+  
+    <div class="carousel_wrapper owl-carousel-header-banners">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide class="slide" style="height:679px">
+          <img src="../../../assets/images/Slider2-1.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('2','1','')">
+        </ng-template>
+        <ng-template carouselSlide class="slide" style="height:679px">
+          <img src="../../../assets/images/Slider2-2.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('2','2','')">
+        </ng-template>
+        <ng-template carouselSlide class="slide" style="height:679px">
+          <img src="../../../assets/images/Slider2-3.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('2','3','')">
+        </ng-template>
+        <ng-template carouselSlide class="slide" style="height:679px">
+          <img src="../../../assets/images/Slider2-4.jpg  " class="owl-carousel-header-banners-dv"  (click)="onChange('2','4','')">
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </header>
+  <!-- Header End -->
+  
+  <!-- Collection section -->
+  
+  <section class="collection_sec_main mb-5 mt-5 p-0">
+    <div class="container-fluid">
+      <div class="row mx-0">
+        <div class="col-lg-3 col-md-6 col-xs-12 px-2">
+          <div class="row mx-0">
+            <div class="col-lg-12 px-0">
+              <div class="collection_prt_1 p-4" style="background-image: url(../../../assets/images/Slider3-1.jpg);" (click)="onChange('3','1')">
+                <!-- <span class="text-gray d-block mb-1"> -->
+                  <!-- Modern Sunglasses -->
+                <!-- </span> -->
+                <!-- <h3 class="text-dark mb-3 w-100 d-inline-block"> -->
+                  <!-- Sale 40% Off -->
+                <!-- </h3> -->
+                <!-- <a href="javaScript:void(0)" class="btn-theme-border py-3 px-5 mt-0 d-inline-block">
+                  View More
+                </a> -->
+              </div>
+            </div>
+            <div class="col-lg-12 px-0">
+              <div class="collection_prt_1 p-4 text-right"
+                style="background-image: url(../../../assets/images/Slider3-2.jpg);" (click)="onChange('3','2')">
+                <span class="text-gray d-block mb-1">
+                  <!-- Western Sandals -->
+                </span>
+                <h3 class="text-dark mb-3 w-100 d-inline-block">
+                  <!-- Special Make -->
+                </h3>
+                <!-- <a href="javaScript:void(0)" class="btn-theme-border py-3 px-5 mt-0 d-inline-block">
+                  View More
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 px-2">
+          <div class="collection_prt_2 p-4 text-center"
+            style="background-image: url(../../../assets/images/Slider3-3.jpg);" (click)="onChange('3','3')">
+            <!-- <span class="text-gray d-block mb-1">
+              Sale 30% Off
+            </span> -->
+            <!-- <h3 class="text-dark mb-3 w-100 d-inline-block">
+              New Arrivals
+            </h3> -->
+            <!-- <a href="javaScript:void(0)" class="btn-theme-border py-3 px-5 mt-0 d-inline-block">
+              View More
+            </a> -->
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 px-2">
+          <div class="row mx-0">
+            <div class="col-lg-12 px-0">
+              <div class="collection_prt_1 text-right p-4"
+                style="background-image: url(../../../assets/images/Slider3-4.jpg);" (click)="onChange('3','4')">
+                <!-- <span class="text-gray d-block mb-1">
+                  Men's Clothings
+                </span>
+                <h3 class="text-dark mb-3 w-100 d-inline-block">
+                  Sale 20% Off
+                </h3>
+                <a href="javaScript:void(0)" class="btn-theme-border py-3 px-5 mt-0 d-inline-block">
+                  View More
+                </a> -->
+              </div>
+            </div>
+            <div class="col-lg-12 px-0">
+              <div class="collection_prt_1 p-4 text-left"
+                style="background-image: url(../../../assets/images/Slider3-5.jpg);" (click)="onChange('3','5')">
+                <!-- <span class="text-gray d-block mb-1">
+                  Bags & Sandals
+                </span>
+                <h3 class="text-dark mb-3 w-100 d-inline-block">
+                  Combo Offer
+                </h3>
+                <a href="javaScript:void(0)" class="btn-theme-border py-3 px-5 mt-0 d-inline-block">
+                  View More
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12 px-2">
+          <div class="collection_prt_2 p-4 text-center"
+            style="background-image: url(../../../assets/images/Slider3-6.jpg);" (click)="onChange('3','6')">
+            <!-- <span class="text-gray d-block mb-1">
+              Sale 40% Off
+            </span>
+            <h3 class="text-dark mb-3 w-100 d-inline-block">
+              New Arrivals
+            </h3>
+            <a href="javaScript:void(0)" class="btn-theme-border py-3 px-5 mt-0 d-inline-block">
+              View More
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Collection section End -->
+  
+  <!-- Banner offer Section -->
+  
+  <section class="p-0">
+  
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide class="slide" style="height:679px">
+        <img src="../../../assets/images/Slider4-1.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('4','1','')">
+      </ng-template>
+      <ng-template carouselSlide class="slide" style="height:679px">
+        <img src="../../../assets/images/Slider4-2.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('4','2','')">
+      </ng-template>
+      <ng-template carouselSlide class="slide" style="height:679px">
+        <img src="../../../assets/images/Slider4-3.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('4','3','')">
+      </ng-template>
+      <ng-template carouselSlide class="slide" style="height:679px">
+        <img src="../../../assets/images/Slider4-4.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('4','4','')">
+      </ng-template>
+    </owl-carousel-o>
+  
+    <div class="carousel_wrapper">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide class="slide" style="height:679px">
+          <img src="../../../assets/images/Slider5-1.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('5','1','')">
+        </ng-template>
+        <ng-template carouselSlide class="slide" style="height:679px">
+          <img src="../../../assets/images/Slider5-2.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('5','2','')">
+        </ng-template>
+        <ng-template carouselSlide class="slide" style="height:679px">
+          <img src="../../../assets/images/Slider5-3.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('5','3','')">
+        </ng-template>
+        <ng-template carouselSlide class="slide" style="height:679px">
+          <img src="../../../assets/images/Slider5-4.jpg" class="owl-carousel-header-banners-dv"  (click)="onChange('5','4','')">
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  
+    <!-- <div class="owl-carousel owl-theme owl-carousel-header-banners mt-5">
+        <div class="item">
+          <div class="owl-carousel-header-banners-dv" style="background:url(../../../assets/images/bg_img4.png)">        
+            
+          </div>
+        </div>
+        <div class="item">
+          <div class="owl-carousel-header-banners-dv" style="background:url(../../../assets/images/bg_img4.png)">        
+            
+          </div>
+        </div>
+        <div class="item">
+          <div class="owl-carousel-header-banners-dv" style="background:url(../../../assets/images/bg_img4.png)">        
+            
+          </div>
+        </div>
+      </div>
+     
+      <div class="owl-carousel owl-theme owl-carousel-header-banners mt-5">
+        <div class="item">
+          <div class="owl-carousel-header-banners-dv" style="background:url(../../../assets/images/bg_img5.png)">        
+            
+          </div>
+        </div>
+        <div class="item">
+          <div class="owl-carousel-header-banners-dv" style="background:url(../../../assets/images/bg_img5.png)">        
+            
+          </div>
+        </div>
+        <div class="item">
+          <div class="owl-carousel-header-banners-dv" style="background:url(../../../assets/images/bg_img5.png)">        
+            
+          </div>
+        </div>
+      </div> -->
+  </section>
+  
+  <!-- Banner offer Section End -->
+  
+  <!-- Blogs Section -->
+  <!-- Blog Section -->
+  <!-- <section class="pt-0 pb-0 my-5 blog_section">
+    <div class="container-fluid">
+      <div class="row mx-0">
+        <div class="col-lg-12 mx-auto text-center">
+          <h2 class="sec_title d-inline-block position-relative">
+            From Our Blog
+          </h2>
+        </div>
+      </div>
+      <div style="margin-top: 3rem;">
+        <owl-carousel-o [options]="customOptions1">
+          <ng-template carouselSlide class="slide" id="type1"
+            *ngFor="let ele of slidesStore">
+            <img [src]="ele.src" [id]="ele.id" [title]="ele.title" class="blogs_img">
+            <div class="blog_section_crd_content p-3">
+              <div class="d-inline-block text-center w-100 text-gray py-2">
+                <div class="d-inline-block w-50 float-left px-2">
+                  <span>
+                    <img class="img-fluid" width="20" height="20" src="../../../assets/images/date_icon.svg">
+                  </span>
+                  <span class="font-18">
+                    {{ele.date}}
+                  </span>
+                </div>
+                <div class="d-inline-block w-50 float-left px-2">
+                  <span>
+                    <img class="img-fluid" width="20" height="20" src="../../../assets/images/comment_icon.svg">
+                  </span>
+                  <span class="font-18">
+                    {{ele.comments}} comments
+                  </span>
+                </div>
+                <div class="d-inline-block w-100 float-unset mt-2 px-2">
+                  <span>
+                    <img class="img-fluid" width="20" height="20" src="../../../assets/images/blog_user_icon.svg">
+                  </span>
+                  <span class="font-18">
+                    {{ele.user_name}}
+                  </span>
+                </div>
+  
+                <div class="d-inline-block w-100 float-unset mt-2 px-2">
+                  <h5 class="font-600 text-dark mt-2 blog_section_crd_content_title">
+                    {{ele.title}}
+                  </h5>
+                </div>
+                <a href="javaScript:(0)" class="text-gray font-20 rd_mr_btn_blog">
+                  Read More
+                  <span class="material-icons">navigate_next</span>
+                </a>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </section> -->
+  </ng-container>
+  <!-- Blog Section End -->

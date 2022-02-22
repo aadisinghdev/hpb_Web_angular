@@ -1,0 +1,75 @@
+<!-- Breadcrumb section -->
+
+<div class="jumbotron jumbotron-fluid breadcrumb_jumbo_custom">
+    <div class="container text-center">
+      <h1 class="text-dark font-500 mb-0">
+        All Collections
+      </h1>
+      <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+        <ol class="breadcrumb mb-0 bg-transparent">
+          <li class="breadcrumb-item">
+            <a href="javascript:void(0)" class="text-gray font-400 text-font-18"
+            [routerLink]="['/home']">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="javascript:void(0)" class="text-gray font-400 text-font-18"
+            [routerLink]="['/all-collections']"> All Collections</a>
+          </li>
+          <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+            <a href="javascript:void(0)" class="text-gray font-400 text-font-18"
+            [routerLink]="['/app/all-collections']">All Collections</a>
+          </li>
+
+          <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+            {{catName}}
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Breadcrumb End -->
+  
+  <!-- All Collection section -->
+  
+  <section class="all_collections_sec">
+    <div class="container-fluid">
+      <div class="row mx-0">
+        <ng-container *ngFor="let item of collectionCategories">
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+            <div class="al_col_sec_crd">
+              <div class="al_col_sec_crd_img">
+                <img class="img-fluid" src="../../../assets/images/col_img_1.png">
+              </div>
+              <div class="al_col_sec_crd_content text-center">
+                <h5 class="font-500">
+                  {{item.name}}
+                </h5>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      </div>
+      <div class="col-lg-12 text-center">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="#">
+                <span class="material-icons">chevron_left</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link active" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                <span class="material-icons">chevron_right</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+  
+  <!-- All Collection section End -->

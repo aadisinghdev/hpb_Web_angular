@@ -1,0 +1,267 @@
+.booking-c-wraper {
+    text-align: center;
+    }
+    
+    .booking-c-wraper h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #4F4F4F;
+    margin-top: 70px;
+    }
+    .booking-c-wraper p{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #333333;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    }
+    .booking-c-wraper p span {
+    font-weight: 700;
+    color: #ad2912;
+    }
+    .booking-c-wraper p.transaction-txt {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #ad2912;
+    }
+    
+    .booking-conrfirmed-section {
+    padding: 40px;
+    
+    }
+    .booking-c-wraper i img {
+        max-width: 100%;
+    }
+    .box-offer {
+    max-width: 388px;
+    min-height: 98px;
+    background: #FFF4EC;
+    background: #FFF4EC;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 5px;
+    
+    .border-dashed-bx {
+    border: 1px dashed #ad2912;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    }
+    }
+    .content-bx {
+        margin-left: 20px;
+    
+        h4 {
+           font-family: 'Work Sans', sans-serif;
+           font-style: normal;
+           font-weight: normal;
+           font-size: 18px;
+           line-height: 20px;
+           color: #ad2912;
+        } 
+       p{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333;
+        margin-bottom: 0;
+       }   
+       }
+     
+       
+    .next-step-bx {
+        max-width: 620px;
+        min-height: 175px;
+        background: #F9F9F9;
+        border-radius: 6px;
+        padding: 25px;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 40px;
+        margin-left: 0;
+        }
+        
+        .next-step-bx h6 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #4F4F4F;
+        margin-bottom: 15px;
+        }
+        .next-step-bx ul {
+         margin: 0;
+         padding: 0;
+        }
+        .next-step-bx ul li {
+        list-style: none;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #4F4F4F;
+        margin-bottom: 15px;
+        }
+        .next-step-bx ul li img {
+            margin-right: 15px;
+        }
+        .next-step-bx ul li:last-child {
+            margin-bottom: 0;
+        }
+        .booking-conrfirmed-section button {
+            min-width: 170px;
+            // margin: auto;
+            margin-top: 40px;
+        }
+    
+    .center-wrapper {
+        width: 898px;
+        margin-left: 15%;
+    }
+    .ecart-header {
+        background-color: #fff;
+        border-bottom: 1px solid #E0E0E0;
+        min-height: 72px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 999;
+    }
+    .close-page {
+        position: absolute;
+        left: 50px;
+        top: 20px;
+    }
+    .rr-logo {
+        width: 96px;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rr-logo img {
+        max-width: 100%;
+    }
+    .property-address {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: #4F4F4F;
+        text-align: right;
+        height: 100%;
+        padding-top: 25px;
+        position: absolute;
+        right: -85px;
+    }
+    .package-item p {
+        margin-bottom: 0;
+        margin-top: 6px;
+    }
+    
+    .ecart{
+        display: none;
+    }
+    
+    @media all and (max-width: 600px) { 
+    
+    .booking-conrfirmed-section {
+        padding: 15px;
+    }
+      
+        .ecart {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+        .item-number{
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #F2994A;
+            font-size: 10px;
+            line-height: 9px;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: -8px;
+            top: -8px;
+        }
+        .loaction-icon {
+            display: inline-block;
+            margin-right: 12px;
+        }
+        .property-address {
+            position:static;
+            padding-top: 00px;
+            text-align: left;
+            font-size: 12px;
+            line-height: 15px;
+        }
+    
+        .m-header{
+            border-bottom: 1px solid #F2F2F2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rr-logo {
+            width: 90px;
+            margin-left: 30px;
+            height: 60px;
+        }
+        .close-page {
+            left: 15px;
+            z-index: 9999;
+            top: 15px;
+        }
+    
+        .close-page img {
+            width: 20px;
+            height: 20px;
+        }
+    
+        .ecart-header {
+            border-bottom: none;
+        height: auto;
+        min-height: auto;
+        }
+        .booking-conrfirmed-section button{
+            margin-top: 20px;
+        }
+    }
+      .pending-content{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      #homebtn{
+          text-align: center;
+          align-items: center;
+          margin-left: 40%;
+          width: 300px;
+          height: 60px;
+          box-shadow: 0px 3px 6px rgba(60, 205, 155, 0.25);
+          border-radius: 5px;
+          background:#363636 !important;
+          color: white;
+          font-size: 1.5rem;
+          font-family: sans-serif;
+      }

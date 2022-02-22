@@ -1,0 +1,18 @@
+.orderSummary{
+    @media(min-width: 576px){
+        .modal-dialog {
+            max-width: 1300px;
+            margin: 1.75rem auto;
+        }
+    }
+    
+    .modal.show .modal-dialog{
+        width: 1250px !important;
+    }
+
+    .modal-body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 400px;
+    }
+}

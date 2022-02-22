@@ -1,0 +1,67 @@
+<div class="jumbotron jumbotron-fluid breadcrumb_jumbo_custom">
+    <div class="container text-center">
+      <h1 class="text-dark font-500 mb-0">
+        Sign In to Your Account
+      </h1>
+      <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+        <ol class="breadcrumb mb-0 bg-transparent">
+          <li class="breadcrumb-item">
+            <a href="javascript:void(0)" class="text-gray font-400 text-font-18"
+            [routerLink]="['/home']">Home</a>
+          </li>
+          <li class="breadcrumb-item active text-gray font-400 text-font-18" aria-current="page">
+            Your Account
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Sign In section -->
+
+<section class="sing_in_sec">
+    <div class="container-fluid">
+      <div class="row mx-0 px-5">
+        <div class="col-lg-6 col-md-10 col-sm-12 mx-auto">
+          <form class="custom_form" [formGroup]="loginForm" (submit)="checkUser()">
+            <div class="form-row">
+              <div class="form-group col-md-12 mb-4">
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+                name="inputEmail4" formControlName="email" value=""
+                (blur)="validateFormField('email')">
+              </div>
+              <div class="form-group col-md-12 mb-4">
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password"
+                name="inputPassword4" formControlName="password" 
+                (blur)="validateFormField('password')">
+                <span class="text_danger" *ngIf="lForm.controls.password.touched && lForm.controls.password.errors?.pattern">Password should be upto 8 characters</span>
+                <span class="text_danger" *ngIf="lForm.controls.password.touched && lForm.controls.password.errors?.required">password must be required</span>
+              </div>
+              <div class="form-group col-md-12 mb-4 text-center py-1">
+                <a href="javaScript:void(0)" class="text-dark font-500 font-18" 
+                [routerLink]="['/forget_password']">
+                  Forgot your password ?
+                </a>
+              </div>
+            </div>
+            <button type="button" (click)="checkUser()" class="btn btn-theme font-18 w-100 py-4"
+            [disabled]="!lForm.valid">Sign in</button>
+          </form>
+          <div class="d-inline-block w-100 text-center mt-4 mb-2">
+            <a  class="text-dark font-400 font-18" style="text-decoration: underline;"
+                [routerLink]="['/register']" [queryParams]="{Otp:true}">
+              Create account
+            </a>
+          </div>
+          <div class="d-inline-block w-100 text-center my-3">
+            <a  [routerLink]="['/home']"  class="text-dark font-500 font-18">
+              Return to store
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Sign In section End -->
+  
